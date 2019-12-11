@@ -25,7 +25,6 @@ const Container = styled.div`
 const Scene = styled.div`
   width: ${panelWidth};
   height: ${panelHeight};
-  border: 1px #a3a3a3 dashed;
   perspective: 1000px;
 `;
 
@@ -35,7 +34,6 @@ const Helix = styled.div<{ currentIndex: number }>`
   position: absolute;
   transform-style: preserve-3d;
   transition: transform 1s;
-  border: 1px red dashed;
   transform: translateZ(calc( -1 * ${translateFromCenter_putInCalc}))
              rotateY(${props => -1 * props.currentIndex * angularWidth_rads}rad); 
 `;
