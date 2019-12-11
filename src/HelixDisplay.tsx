@@ -13,6 +13,8 @@ const angularWidth_rads = 2 * Math.PI / totalPanels; // the total angular width 
 const translateFromCenter_putInCalc = `0.5 * ${panelWidth} / ${Math.tan(angularWidth_rads / 2)}`;
 // how much each panel should be translated from the y axis. NOTE: should be placed within a calc() expression
 
+const perPanelVerticalOffset = "25vh";
+
 
 const Container = styled.div`
   display: flex;
@@ -20,6 +22,7 @@ const Container = styled.div`
   align-items: center;
   width: 100vw;
   height: 100vh;
+  overflow: hidden;
 `;
 
 const Scene = styled.div`
@@ -35,7 +38,9 @@ const Helix = styled.div<{ currentIndex: number }>`
   transform-style: preserve-3d;
   transition: transform 1s;
   transform: translateZ(calc( -1 * ${translateFromCenter_putInCalc}))
-             rotateY(${props => -1 * props.currentIndex * angularWidth_rads}rad); 
+             rotateY(${props => -1 * props.currentIndex * angularWidth_rads}rad)
+             translateY(calc(${perPanelVerticalOffset} * ${props => props.currentIndex}));
+         
 `;
 
 const Panel = styled.div<{ index: number }>`
@@ -48,7 +53,8 @@ const Panel = styled.div<{ index: number }>`
   border: 5px hsla(${props => props.index * angularWidth_rads}rad, 90%, 50%, 0.9) solid;
   
   transform: rotateY(${props => props.index * angularWidth_rads}rad)
-             translateZ(calc(${translateFromCenter_putInCalc}));
+             translateZ(calc(${translateFromCenter_putInCalc}))
+             translateY(calc(-1 * ${perPanelVerticalOffset} * ${props => props.index}));
 `;
 
 const gridSize = '2500px';
@@ -84,11 +90,19 @@ const Grid = styled.div`
 export const HelixDisplay = ({children}: PropsWithChildren<{}>) => {
     const [currentIndex, setCurrentIndex] = useState(0);
 
+    const fitWithinBounds = (index: number): number => {
+        if (index < 0)
+            return 0;
+        else if (index >= totalPanels)
+            return  totalPanels - 1;
+        else return index;
+    };
+
     const goRight = () => {
-        setTimeout(()=>setCurrentIndex(currentIndex + 1), 10);
+        setTimeout(()=>setCurrentIndex(fitWithinBounds(currentIndex + 1)), 10);
     };
     const goLeft = () => {
-        setTimeout(()=>setCurrentIndex(currentIndex - 1), 10);
+        setTimeout(()=>setCurrentIndex(fitWithinBounds(currentIndex - 1)), 10);
     };
 
 
