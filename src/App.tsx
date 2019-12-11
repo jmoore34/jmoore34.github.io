@@ -1,7 +1,7 @@
 import React from 'react';
 import './App.css';
 import styled from "styled-components";
-import {HelixDisplay} from "./HelixDisplay";
+import {HelixDisplay} from "./components/HelixDisplay";
 
 const App: React.FC = () => {
   return <HelixDisplay>
