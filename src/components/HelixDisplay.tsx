@@ -90,11 +90,14 @@ const Grid = styled.div`
 export const HelixDisplay = ({children}: PropsWithChildren<{}>) => {
     const [currentIndex, setCurrentIndex] = useState(0);
 
+    const childArray = React.Children.toArray(children);
+    const panelCount = childArray.length;
+
     const fitWithinBounds = (index: number): number => {
         if (index < 0)
             return 0;
-        else if (index >= totalPanels)
-            return  totalPanels - 1;
+        else if (index >= panelCount)
+            return panelCount - 1;
         else return index;
     };
 
