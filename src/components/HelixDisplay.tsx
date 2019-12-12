@@ -7,7 +7,6 @@ import KeyboardEventHandler from 'react-keyboard-event-handler';
 
 const panelWidth = "50vw";
 const panelHeight = "50vh";
-const panelMargin = "14px";
 const totalPanels = 8;
 const angularWidth_rads = 2 * Math.PI / totalPanels; // the total angular width of each panel, in radians
 const translateFromCenter_putInCalc = `0.5 * ${panelWidth} / ${Math.tan(angularWidth_rads / 2)}`;
@@ -45,10 +44,12 @@ const Helix = styled.div<{ currentIndex: number }>`
 
 const Panel = styled.div<{ index: number }>`
   position: absolute;
-  left: ${panelMargin};
-  right: ${panelMargin};
-  top: ${panelMargin};
-  bottom: ${panelMargin};
+  width: calc(${panelWidth} - 30px);
+  height: ${panelHeight};
+  max-height: 100%;
+  overflow-x: hidden;
+  overflow-y: auto;
+  
   background-color: hsla(0deg,100%,100%,0.6);
   border: 5px hsla(${props => props.index * angularWidth_rads}rad, 90%, 50%, 0.9) solid;
   
@@ -84,7 +85,6 @@ const Grid = styled.div`
                     linear-gradient(to right, #585858 4px, transparent 1px), // thick horizontal lines
                     linear-gradient(to bottom, #585858 4px, transparent 1px); // thick vertical lines
 `;
-
 
 
 export const HelixDisplay = ({children}: PropsWithChildren<{}>) => {
