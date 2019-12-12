@@ -1,6 +1,6 @@
 import styled from 'styled-components';
 import {MdChevronRight} from 'react-icons/md'
-import React, {PropsWithChildren, useState} from 'react';
+import React, {PropsWithChildren, useRef, useState} from 'react';
 import {Span} from "./Typography";
 
 
@@ -15,10 +15,12 @@ const ItemHandle = styled(Span)`
   cursor: pointer;
 `;
 
-const ItemBody = styled.div<{ active?: boolean }>`
-  transition: all 1s;
+const ItemBody = styled.div<{ active?: boolean, maxHeight?: any }>`
+  transition: max-height 1s;
   margin-left: 15px;  
-  ${props => props.active ? "" : "height: 0; overflow: hidden; opacity: 0;"}
+  overflow: hidden;
+  max-height: ${props => props.maxHeight};
+  //props => props.active ? "max-height: 500px;" : "max-height: 0px;"
 `;
 
 type ItemProps = {
@@ -28,9 +30,10 @@ type ItemProps = {
 };
 
 const Item = ({active, children, title, onClick}: PropsWithChildren<ItemProps>) => {
+    const bodyRef = useRef<HTMLDivElement>(null);
     return <>
         <ItemHandle onClick={onClick}><ItemIcon active={active}/>{title}</ItemHandle>
-        <ItemBody active={active}>{children}</ItemBody>
+        <ItemBody active={active} ref={bodyRef} maxHeight={active ? `${bodyRef.current?.scrollHeight}px` : "0px" } >{children}</ItemBody>
     </>
 };
 type ExpandableListItem = {
