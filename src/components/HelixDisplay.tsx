@@ -1,9 +1,8 @@
 import styled from 'styled-components';
 import React, {PropsWithChildren, useState} from 'react';
 // @ts-ignore
-import Swipe from 'react-easy-swipe';
-// @ts-ignore
 import KeyboardEventHandler from 'react-keyboard-event-handler';
+import {Swipeable} from "react-swipeable";
 
 const panelWidth = "50vw";
 const panelHeight = "50vh";
@@ -109,7 +108,7 @@ export const HelixDisplay = ({children}: PropsWithChildren<{}>) => {
     };
 
 
-    return <Swipe onSwipeLeft={goRight} onSwipeRight={goLeft}>
+    return <Swipeable onSwipedLeft={goRight} onSwipedRight={goLeft}>
         <Container>
             <KeyboardEventHandler handleKeys={['left']} onKeyEvent={goLeft}/>
             <KeyboardEventHandler handleKeys={['right']} onKeyEvent={goRight}/>
@@ -122,5 +121,5 @@ export const HelixDisplay = ({children}: PropsWithChildren<{}>) => {
                 </Helix>
             </Scene>
         </Container>
-    </Swipe>;
+    </Swipeable>;
 };
