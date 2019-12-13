@@ -6,8 +6,9 @@ import {Swipeable} from "react-swipeable";
 
 const panelWidth = "50vw";
 const panelHeight = "50vh";
-const totalPanels = 8;
-const angularWidth_rads = 2 * Math.PI / totalPanels; // the total angular width of each panel, in radians
+const panelsPerCycle = 8.3; // How many panels should fit in 360 degrees. Can be fractional/irrational
+const panelsPerColorCycle = 8.7; // How many panels per 360 degrees of hue. Can be fractional/irrational
+const angularWidth_rads = 2 * Math.PI / panelsPerCycle; // the total angular width of each panel, in radians
 const translateFromCenter_putInCalc = `0.5 * ${panelWidth} / ${Math.tan(angularWidth_rads / 2)}`;
 // how much each panel should be translated from the y axis. NOTE: should be placed within a calc() expression
 
@@ -51,7 +52,7 @@ const Panel = styled.div<{ index: number, zIndex: number }>`
   z-index: ${props => props.zIndex};
   
   background-color: hsla(0deg,100%,100%,0.6);
-  border: 5px hsla(${props => props.index * angularWidth_rads}rad, 90%, 50%, 0.9) solid;
+  border: 5px hsla(${props => props.index / panelsPerColorCycle}turn, 90%, 50%, 0.9) solid;
   
   transform: rotateY(${props => props.index * angularWidth_rads}rad)
              translateZ(calc(${translateFromCenter_putInCalc}))
