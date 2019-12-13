@@ -41,13 +41,14 @@ const Helix = styled.div<{ currentIndex: number }>`
          
 `;
 
-const Panel = styled.div<{ index: number }>`
+const Panel = styled.div<{ index: number, zIndex: number }>`
   position: absolute;
   width: calc(${panelWidth} - 30px);
   height: ${panelHeight};
   max-height: 100%;
   overflow-x: hidden;
   overflow-y: auto;
+  z-index: ${props => props.zIndex};
   
   background-color: hsla(0deg,100%,100%,0.6);
   border: 5px hsla(${props => props.index * angularWidth_rads}rad, 90%, 50%, 0.9) solid;
@@ -115,9 +116,10 @@ export const HelixDisplay = ({children}: PropsWithChildren<{}>) => {
             <Scene>
                 <Helix currentIndex={currentIndex}>
                     <Grid />
-                    {React.Children.toArray(children).map((content, index) =>
-                        <Panel index={index} key={index}>{content}</Panel>
-                    )}
+                    {React.Children.toArray(children).map((content, index) => {
+                        const zIndex = panelCount - Math.abs(index - currentIndex); // Closer to current panel = higher z-index
+                        return <Panel index={index} key={index} zIndex={zIndex}>{content}</Panel>;
+                    })}
                 </Helix>
             </Scene>
         </Container>
