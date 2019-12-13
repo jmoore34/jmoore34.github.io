@@ -12,6 +12,9 @@ import {
 } from "./projects";
 
 export const StartPanel = () => <PanelContent title={"Jonathan Moore"} subtitle={"Portfolio"}>
+    <Paragraph showOnlyWhenVertical color="red">
+        Note: To best experience this site, rotate your screen from portrait to landscape.
+    </Paragraph>
     <Paragraph>
         Use arrow keys or swipe gestures to navigate.
     </Paragraph>
