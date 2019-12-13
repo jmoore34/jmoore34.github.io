@@ -26,3 +26,12 @@ export const Paragraph = styled.p`
 export const Span = styled.span`
   ${bodyTextFormatting}
 `;
+
+export const Link = styled.a.attrs({
+    target: '_blank',
+    rel: 'noopener noreferrer'
+})`
+  text-decoration: none;
+  ${bodyTextFormatting};
+  color: green;
+`;
