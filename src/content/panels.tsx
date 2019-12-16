@@ -40,7 +40,7 @@ export const EducationPanel = () => <PanelContent title="Education" subtitle="Ov
         "The University of Texas at Dallas",
         "B.S. Computer Science, Expected May 2021",
         "Academic Excellence Scholarship, Honors Level",
-        "GPA 3.949"
+        "GPA 3.955/4.0"
     ]}/>
 </PanelContent>;
 
