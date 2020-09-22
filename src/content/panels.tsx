@@ -5,7 +5,7 @@ import {List} from "../components/List";
 import {
     FokusProject,
     IRChatProject,
-    PortfolioProject,
+    PortfolioProject, SDQRProject,
     ShareCalcProject,
     STVProject,
     TunerProject
@@ -22,10 +22,10 @@ export const StartPanel = () => <PanelContent title={"Jonathan Moore"} subtitle=
 
 export const AboutMePanel = () => <PanelContent title={"About me"}>
     <Paragraph>
-        I am a junior in Computer Science at UT Dallas.
+        I am a Fast Track senior in Computer Science at UT Dallas.
         I have a love for personal projects, from React-based websites like this one to embedded microcontroller code
         to algorithm design in functional programming languages.
-        I am interested in gaining more professional experience within the CS/SE field as well as branching out more into
+        I am interested in gaining more professional experience within the CS/SE field as well as getting more experience in
         backend, full-stack, and mobile development.
     </Paragraph>
     <Span>
@@ -39,16 +39,20 @@ export const EducationPanel = () => <PanelContent title="Education" subtitle="Ov
     <List items={[
         "The University of Texas at Dallas",
         "B.S. Computer Science, Expected May 2021",
+        "M.S. Computer Science (Fast Track), Expected November 2022",
         "Academic Excellence Scholarship, Honors Level",
-        "GPA 3.955/4.0"
+        "GPA 3.965/4.0"
     ]}/>
 </PanelContent>;
 
 export const CourseworkPanel = () => <PanelContent title="Education" subtitle="Coursework">
     <List items={[
-        "Data Structures & Algorithms",
+        "Advanced Data Structures & Algorithms",
+        "Database Systems",
+        "Automata Theory",
         "Digital Logic",
         "Software Engineering",
+        "Operating System Design",
         "Computer Architecture",
         "Organization of Programming Languages",
         "Technical & Professional Communication"
@@ -58,12 +62,15 @@ export const CourseworkPanel = () => <PanelContent title="Education" subtitle="C
 export const LanguagesPanel = () => <PanelContent title="Skills" subtitle="Languages">
     <List items={[
         "Kotlin",
-        "Haskell",
+        "C",
         "C#",
         "C++",
         "Typescript",
         "ES10 Javascript",
-        "Java"
+        "Java",
+        "Lisp",
+        "SQL",
+        "Bash"
     ]}/>
 </PanelContent>;
 
@@ -84,8 +91,8 @@ export const FrameworksPanel = () => <PanelContent title="Skills" subtitle="Fram
 
     <Paragraph>Currently self-studying</Paragraph>
     <List items={[
-        "Django",
-        "Exposed (Kotlin ORM)"
+        "Exposed (Kotlin ORM)",
+        "ktor (Kotlin web server)"
     ]}/>
 </PanelContent>;
 
@@ -93,8 +100,10 @@ export const MiscSkillsPanel = () => <PanelContent title="Skills" subtitle="Tool
     <Paragraph>Software Development</Paragraph>
     <List items={[
         "Git",
-        "Unit testing (Jest, JUnit 5)",
-        "Linux + Bash"
+        "Unit testing (Jest, JUnit 5, ktor)",
+        "Linux + Bash",
+        "Vim and Emacs",
+        "Intellij, WebStorm, Android Studio, etc."
     ]}/>
 
     <Paragraph>Document Editing</Paragraph>
@@ -108,18 +117,28 @@ export const MiscSkillsPanel = () => <PanelContent title="Skills" subtitle="Tool
 export const ProjectsPanel = () => <PanelContent title="Projects" forceScrollbar> {/*// force scrollbar appearance to prevent scrollbar-based jitter during animations*/}
     <Paragraph>Click on an item to expand more details.</Paragraph>
     <List items={[
+        {title: "Self-Documenting Quine Relay (Summer 2020)", body: <SDQRProject/>},
         {title: "Portfolio Website (Fall 2019)", body: <PortfolioProject/>},
         {title: "ShareCalc (Fall 2019)", body: <ShareCalcProject/>},
         {title: "Fokus (Spring 2019)", body: <FokusProject/>},
         {title: "Web Tuner (Spring 2019)", body: <TunerProject/>},
         {title: "IR Chat (Fall 2018)", body: <IRChatProject/>},
-        {title: "Web-STV (Ongoing)", body: <STVProject/>}
+        //{title: "Web-STV (Ongoing)", body: <STVProject/>}
     ]}/>
 </PanelContent>;
 
 export const WorkPanel = () => <PanelContent title="Other experience">
     <Paragraph>Workplace experience (click to expand)</Paragraph>
     <List items={[
+        {title: "Research Assistant (Spring 2020-Present)", body: <>
+                <Paragraph>The University of Texas at Dallas, Richardson, TX (Dr. Shiyi Wei's Lab)</Paragraph>
+                <Paragraph>
+                    Working on a team of PhD students creating a framework to evaluate fuzz testers via artificial bug
+                    injection. I read papers, design and run experiments (e.g. with ASAN), develop key parts of the toolchain
+                    (such as a custom Clang compiler plugin to rewrite source code and a custom Primus Lisp plugin for
+                    the Binary Analysis Platform microexecutor), and help write the paper.
+                </Paragraph>
+            </>},
         {title: "Orientation Leader (Spring 2018-Summer 2019)", body: <>
                 <Paragraph>The University of Texas at Dallas, Richardson, TX</Paragraph>
                 <Paragraph>

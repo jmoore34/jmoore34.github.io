@@ -54,3 +54,11 @@ export const STVProject = () => <Project
     overview="Full-stack voting application designed to democratize online voting via the Single Transferable Vote (STV) system."
     github="https://github.com/charJe/single-transferable"
 />;
+
+export const SDQRProject = () => <Project
+    type="Personal project"
+    tools="Kotlin, Unit Testing (kotest)"
+    overview="A Python program that outputs a C program that outputs a C++ program that outputs a C# program that outputs a Lisp program that outputs the exact original Python program. Each program in the cycle works independently and runs without any input, network, or disk reads. Moreover, each program in the cycle prints colored documentation about how to compile the next program in the cycle."
+    github="https://github.com/jmoore34/quine-relay"
+    live="https://bit.ly/quinerelay"
+/>;
