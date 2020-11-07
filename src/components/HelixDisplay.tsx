@@ -112,8 +112,8 @@ export const HelixDisplay = ({children}: PropsWithChildren<{}>) => {
 
     return <Swipeable onSwipedLeft={goRight} onSwipedRight={goLeft}>
         <Container>
-            <KeyboardEventHandler handleKeys={['left']} onKeyEvent={goLeft}/>
-            <KeyboardEventHandler handleKeys={['right']} onKeyEvent={goRight}/>
+            <KeyboardEventHandler handleKeys={['left', 'down']} onKeyEvent={goLeft}/>
+            <KeyboardEventHandler handleKeys={['right', 'up']} onKeyEvent={goRight}/>
             <Scene>
                 <Helix currentIndex={currentIndex}>
                     <Grid />
