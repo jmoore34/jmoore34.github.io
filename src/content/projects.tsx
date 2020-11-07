@@ -48,13 +48,6 @@ export const ShareCalcProject = () => <Project
     github="https://github.com/MayaIsla/3354-Team-Moc"
 />;
 
-export const STVProject = () => <Project
-    type="Personal project"
-    tools="Python, Django, Graphene/GraphQL, SQLite, React"
-    overview="Full-stack voting application designed to democratize online voting via the Single Transferable Vote (STV) system."
-    github="https://github.com/charJe/single-transferable"
-/>;
-
 export const SDQRProject = () => <Project
     type="Personal project"
     tools="Kotlin, Unit Testing (kotest)"
@@ -62,3 +55,9 @@ export const SDQRProject = () => <Project
     github="https://github.com/jmoore34/quine-relay"
     live="https://bit.ly/quinerelay"
 />;
+
+export const RCVProject = () => <Project
+    type="Personal project"
+    tools="Kotlin (ktor, Exposed), PostgreSQL, React, Typescript"
+    overview="A full-stack Strawpoll-like voting application that implements Ranked Choice Voting. Custom-built REST API built with Ktor, PostgreSQL database, and React frontend. "
+/>

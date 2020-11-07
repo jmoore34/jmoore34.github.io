@@ -5,9 +5,8 @@ import {List} from "../components/List";
 import {
     FokusProject,
     IRChatProject,
-    PortfolioProject, SDQRProject,
+    PortfolioProject, RCVProject, SDQRProject,
     ShareCalcProject,
-    STVProject,
     TunerProject
 } from "./projects";
 
@@ -117,13 +116,13 @@ export const MiscSkillsPanel = () => <PanelContent title="Skills" subtitle="Tool
 export const ProjectsPanel = () => <PanelContent title="Projects" forceScrollbar> {/*// force scrollbar appearance to prevent scrollbar-based jitter during animations*/}
     <Paragraph>Click on an item to expand more details.</Paragraph>
     <List items={[
+        {title: "RCV-Poll (Ongoing)", body: <RCVProject />},
         {title: "Self-Documenting Quine Relay (Summer 2020)", body: <SDQRProject/>},
         {title: "Portfolio Website (Fall 2019)", body: <PortfolioProject/>},
         {title: "ShareCalc (Fall 2019)", body: <ShareCalcProject/>},
         {title: "Fokus (Spring 2019)", body: <FokusProject/>},
         {title: "Web Tuner (Spring 2019)", body: <TunerProject/>},
         {title: "IR Chat (Fall 2018)", body: <IRChatProject/>},
-        //{title: "Web-STV (Ongoing)", body: <STVProject/>}
     ]}/>
 </PanelContent>;
 
