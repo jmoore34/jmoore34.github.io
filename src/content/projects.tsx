@@ -60,4 +60,12 @@ export const RCVProject = () => <Project
     type="Personal project"
     tools="Kotlin (ktor, Exposed), PostgreSQL, React, Typescript"
     overview="A full-stack Strawpoll-like voting application that implements Ranked Choice Voting. Custom-built REST API built with Ktor, PostgreSQL database, and React frontend. "
+    github=""
+/>
+
+export const DegreeAuditProject = () => <Project
+    type="Senior design project"
+    tools="React, Flask"
+    overview="Full-stack React application reimagining how students plan and share their degree plans, greatly increasing advising efficiency. Students click on classes in a degree flowchart to assign color-coded semesters and then can export their degree plan as an image. Includes drag-and-drop SHA-256 password-authenticated flowchart editor for advisors using custom REST API."
+    github="https://github.com/jmoore34/degreeaudit"
 />

@@ -3,6 +3,7 @@ import * as React from "react";
 import {Link, Paragraph, Span} from "../components/Typography";
 import {List} from "../components/List";
 import {
+    DegreeAuditProject,
     FokusProject,
     IRChatProject,
     PortfolioProject, RCVProject, SDQRProject,
@@ -40,7 +41,7 @@ export const EducationPanel = () => <PanelContent title="Education" subtitle="Ov
         "B.S. Computer Science, Expected May 2021",
         "M.S. Computer Science (Fast Track), Expected November 2022",
         "Academic Excellence Scholarship, Honors Level",
-        "GPA 3.965/4.0"
+        "GPA 3.966/4.0"
     ]}/>
 </PanelContent>;
 
@@ -64,6 +65,7 @@ export const LanguagesPanel = () => <PanelContent title="Skills" subtitle="Langu
         "C",
         "C#",
         "C++",
+        "Python",
         "Typescript",
         "ES10 Javascript",
         "Java",
@@ -88,8 +90,9 @@ export const FrameworksPanel = () => <PanelContent title="Skills" subtitle="Fram
         "React Native"
     ]}/>
 
-    <Paragraph>Currently self-studying</Paragraph>
+    <Paragraph>Backend</Paragraph>
     <List items={[
+        "Flask",
         "Exposed (Kotlin ORM)",
         "ktor (Kotlin web server)"
     ]}/>
@@ -117,6 +120,7 @@ export const ProjectsPanel = () => <PanelContent title="Projects" forceScrollbar
     <Paragraph>Click on an item to expand more details.</Paragraph>
     <List items={[
         {title: "RCV-Poll (Ongoing)", body: <RCVProject />},
+        {title: "Degree Audit Tool (Fall 2020)", body: <DegreeAuditProject />},
         {title: "Self-Documenting Quine Relay (Summer 2020)", body: <SDQRProject/>},
         {title: "Portfolio Website (Fall 2019)", body: <PortfolioProject/>},
         {title: "ShareCalc (Fall 2019)", body: <ShareCalcProject/>},
