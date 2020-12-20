@@ -41,7 +41,7 @@ export const EducationPanel = () => <PanelContent title="Education" subtitle="Ov
         "B.S. Computer Science, Expected May 2021",
         "M.S. Computer Science (Fast Track), Expected November 2022",
         "Academic Excellence Scholarship, Honors Level",
-        "GPA 3.966/4.0"
+        "GPA 3.969/4.0"
     ]}/>
 </PanelContent>;
 
