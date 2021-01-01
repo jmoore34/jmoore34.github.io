@@ -25,8 +25,9 @@ export const AboutMePanel = () => <PanelContent title={"About me"}>
         I am a Fast Track senior in Computer Science at UT Dallas.
         I have a love for personal projects, from React-based websites like this one to embedded microcontroller code
         to algorithm design in functional programming languages.
-        I am interested in gaining more professional experience within the CS/SE field as well as getting more experience in
-        backend, full-stack, and mobile development.
+        I also enjoy working on
+        backend, full-stack, and mobile development,
+        and lately I've been working more on developing my cybersecurity knowledge.
     </Paragraph>
     <Span>
         <Link href="https://github.com/jmoore34">GitHub</Link><span> - </span>
