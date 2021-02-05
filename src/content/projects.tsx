@@ -69,3 +69,10 @@ export const DegreeAuditProject = () => <Project
     overview="Full-stack React application reimagining how students plan and share their degree plans, greatly increasing advising efficiency. Students click on classes in a degree flowchart to assign color-coded semesters and then can export their degree plan as an image. Includes drag-and-drop SHA-256 password-authenticated flowchart editor for advisors using custom REST API."
     github="https://github.com/jmoore34/degreeaudit"
 />
+
+export const RoleAssigner = () => <Project
+    type="Personal project"
+    tools="React, ktor, Exposed"
+    overview="Full-stack React application allowing for anonymized role assignment using custom WebSocket server. Features live, Google Docs-like collaboration, input debouncing, material design, and a custom API."
+    github="https://github.com/jmoore34/roleassigner"
+/>

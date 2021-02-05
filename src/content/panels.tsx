@@ -6,7 +6,7 @@ import {
     DegreeAuditProject,
     FokusProject,
     IRChatProject,
-    PortfolioProject, RCVProject, SDQRProject,
+    PortfolioProject, RCVProject, RoleAssigner, SDQRProject,
     ShareCalcProject,
     TunerProject
 } from "./projects";
@@ -50,12 +50,15 @@ export const CourseworkPanel = () => <PanelContent title="Education" subtitle="C
     <List items={[
         "Advanced Data Structures & Algorithms",
         "Database Systems",
+        "Computer Networks",
         "Automata Theory",
         "Digital Logic",
         "Software Engineering",
         "Operating System Design",
         "Computer Architecture",
+        "C/C++ Programming in a Unix Environment",
         "Organization of Programming Languages",
+        "Senior Design",
         "Technical & Professional Communication"
     ]}/>
 </PanelContent>;
@@ -95,7 +98,9 @@ export const FrameworksPanel = () => <PanelContent title="Skills" subtitle="Fram
     <List items={[
         "Flask",
         "Exposed (Kotlin ORM)",
-        "ktor (Kotlin web server)"
+        "ktor (Kotlin web server)",
+        "MySQL",
+        "PostgreSQL"
     ]}/>
 </PanelContent>;
 
@@ -105,8 +110,18 @@ export const MiscSkillsPanel = () => <PanelContent title="Skills" subtitle="Tool
         "Git",
         "Unit testing (Jest, JUnit 5, ktor)",
         "Linux + Bash",
+        "Docker",
         "Vim and Emacs",
         "Intellij, WebStorm, Android Studio, etc."
+    ]}/>
+
+    <Paragraph>Cybersecurity Research</Paragraph>
+    <List items={[
+        "Binary Analysis Platform (Primus symbolic microexecutor)",
+        "Custom Clang tool development (libtooling)",
+        "AddressSanitizer",
+        "Ghidra",
+        "GDB"
     ]}/>
 
     <Paragraph>Document Editing</Paragraph>
@@ -120,7 +135,7 @@ export const MiscSkillsPanel = () => <PanelContent title="Skills" subtitle="Tool
 export const ProjectsPanel = () => <PanelContent title="Projects" forceScrollbar> {/*// force scrollbar appearance to prevent scrollbar-based jitter during animations*/}
     <Paragraph>Click on an item to expand more details.</Paragraph>
     <List items={[
-        {title: "RCV-Poll (Ongoing)", body: <RCVProject />},
+        {title: "Role Assigner (Winter 2020)", body: <RoleAssigner />},
         {title: "Degree Audit Tool (Fall 2020)", body: <DegreeAuditProject />},
         {title: "Self-Documenting Quine Relay (Summer 2020)", body: <SDQRProject/>},
         {title: "Portfolio Website (Fall 2019)", body: <PortfolioProject/>},
@@ -154,9 +169,9 @@ export const WorkPanel = () => <PanelContent title="Other experience">
     ]}/>
     <Paragraph>Extracurriculars</Paragraph>
     <List items={[
-        "Cellist, Musica Nova (Spring 2019-present)",
+        "Cellist, Musica Nova (Spring 2019-Fall 2020)",
         "Freshman Mentor, Freshman Mentor Program (Fall 2018-present)",
-        "President, Animal Rights Club (Fall 2018-present)",
+        //"President, Animal Rights Club (Fall 2018-present)",
         "Webmaster, Engineer in Residence [EiR] (Spring 2018-present)",
     ]}
     />
