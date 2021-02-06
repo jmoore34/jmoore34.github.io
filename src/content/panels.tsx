@@ -112,7 +112,7 @@ export const MiscSkillsPanel = () => <PanelContent title="Skills" subtitle="Tool
         "Linux + Bash",
         "Docker",
         "Vim and Emacs",
-        "Intellij, WebStorm, Android Studio, etc."
+        "IntelliJ, WebStorm, Android Studio, etc."
     ]}/>
 
     <Paragraph>Cybersecurity Research</Paragraph>
