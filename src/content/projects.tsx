@@ -75,4 +75,5 @@ export const RoleAssigner = () => <Project
     tools="React, ktor, Exposed"
     overview="Full-stack React application allowing for anonymized role assignment using custom WebSocket server. Features live, Google Docs-like collaboration, input debouncing, material design, and a custom API."
     github="https://github.com/jmoore34/roleassigner"
+    live="https://jmoore34.github.io/RoleAssigner/"
 />

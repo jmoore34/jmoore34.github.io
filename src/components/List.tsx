@@ -25,7 +25,7 @@ const ItemBody = styled.div<{ active?: boolean, maxHeight?: any }>`
 
 type ItemProps = {
     active?: boolean
-    title: string
+    title: string | JSX.Element
     onClick?: () => void
 };
 
@@ -37,10 +37,10 @@ const Item = ({active, children, title, onClick}: PropsWithChildren<ItemProps>) 
     </>
 };
 type ExpandableListItem = {
-    title: string
+    title: string | JSX.Element
     body?: any
 }
-type ListItem = ExpandableListItem | string;
+type ListItem = string | JSX.Element | ExpandableListItem;
 
 type ListProps = {
     items: ListItem[]
