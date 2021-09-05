@@ -18,11 +18,11 @@ const App: React.FC = () => {
     <AboutMePanel/>
     <EducationPanel/>
     <CourseworkPanel/>
+    <WorkPanel/>
     <LanguagesPanel/>
     <FrameworksPanel/>
     <MiscSkillsPanel/>
     <ProjectsPanel/>
-    <WorkPanel/>
   </HelixDisplay>
 };
 

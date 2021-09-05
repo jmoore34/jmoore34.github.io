@@ -3,6 +3,7 @@ import * as React from "react";
 import { Link, Paragraph, Span } from "../components/Typography";
 import { List } from "../components/List";
 import {
+    CubeClock,
     DegreeAuditProject,
     FokusProject,
     IRChatProject,
@@ -148,6 +149,7 @@ export const MiscSkillsPanel = () => <PanelContent title="Skills" subtitle="Tool
 export const ProjectsPanel = () => <PanelContent title="Projects" forceScrollbar> {/*// force scrollbar appearance to prevent scrollbar-based jitter during animations*/}
     <Paragraph>Click on an item to expand more details.</Paragraph>
     <List items={[
+        { title: "Cube Clock (Fall 2021)", body: <CubeClock /> },
         { title: "Role Assigner (Spring-Summer 2021)", body: <RoleAssigner /> },
         { title: "Degree Audit Tool (Fall 2020)", body: <DegreeAuditProject /> },
         { title: "Self-Documenting Quine Relay (Summer 2020)", body: <SDQRProject /> },
@@ -159,14 +161,14 @@ export const ProjectsPanel = () => <PanelContent title="Projects" forceScrollbar
     ]} />
 </PanelContent>;
 
-export const WorkPanel = () => <PanelContent title="Other experience">
+export const WorkPanel = () => <PanelContent title="Work experience">
 
     <Paragraph>Workplace experience (click to expand)</Paragraph>
     <List items={[
         {
-            title: "Software Development Intern (Summer 2021 / Ongoing)", body: <>
+            title: "Software Development Intern (Summer 2021)", body: <>
                 <Paragraph>Tyler Technologies, Plano, TX</Paragraph>
-                <Paragraph>Refactor legacy Silverlight code to WPF using Agile (with Jira) in 2-week sprints.</Paragraph>
+                <Paragraph>Performed a long-awaited refactor of legacy Silverlight code into cleaner, more modern C# & WPF code with Material Design and MVVM architecture. I worked in two-week sprints, using Jira to write test cases, write dev plans, and open PRs.</Paragraph>
             </>
         },
         {
@@ -193,8 +195,8 @@ export const WorkPanel = () => <PanelContent title="Other experience">
     ]} />
     <Paragraph>Extracurriculars</Paragraph>
     <List items={[
-        "Cellist, Musica Nova (Spring 2019-Fall 2020)",
         "Freshman Mentor, Freshman Mentor Program (Fall 2018-Spring 2021)",
+        "Cellist, Musica Nova (Spring 2019-Fall 2020)",
         //"President, Animal Rights Club (Fall 2018-present)",
         "Webmaster, Engineer in Residence [EiR] (Spring 2018-Spring 2020)",
     ]}

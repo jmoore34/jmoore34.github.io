@@ -77,3 +77,11 @@ export const RoleAssigner = () => <Project
     github="https://github.com/jmoore34/roleassigner"
     live="https://jmoore34.github.io/RoleAssigner/"
 />
+
+export const CubeClock = () => <Project
+    type="Personal mini-project"
+    tools="React, Typescript, SVG, styled-components"
+    overview="Hue-shifted animated clock PWA featuring SVG cubes written from scratch."
+    github="https://github.com/jmoore34/cubeclock"
+    live="https://jmoore34.github.io/cubeclock/"
+/>
