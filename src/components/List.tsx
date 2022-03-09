@@ -10,9 +10,9 @@ const ItemIcon = styled(MdChevronRight)<{ active?: boolean }>`
   ${props => props.active && "transform: rotateZ(90deg);"}
 `;
 
-const ItemHandle = styled(Span)`
+const ItemHandle = styled(Span)<{ clickable?: boolean }>`
   margin-left: 5px;
-  cursor: pointer;
+  ${props => props.clickable && "cursor: pointer; color: #82da7f"};
 `;
 
 const ItemBody = styled.div<{ active?: boolean, maxHeight?: any }>`
@@ -32,7 +32,7 @@ type ItemProps = {
 const Item = ({active, children, title, onClick}: PropsWithChildren<ItemProps>) => {
     const bodyRef = useRef<HTMLDivElement>(null);
     return <>
-        <ItemHandle onClick={onClick}><ItemIcon active={active}/>{title}</ItemHandle>
+        <ItemHandle onClick={onClick} clickable={children != null}><ItemIcon active={active}/>{title}</ItemHandle>
         <ItemBody active={active} ref={bodyRef} maxHeight={active ? `${bodyRef.current?.scrollHeight}px` : "0px" } >{children}</ItemBody>
     </>
 };
