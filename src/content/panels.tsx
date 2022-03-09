@@ -108,21 +108,22 @@ export const FrameworksPanel = () => <PanelContent title="Skills" subtitle="Fram
     
     <Paragraph>Mobile</Paragraph>
     <List items={[
-        "Android (Java)",
-        "React Native"
+        "Android (Java) (1 project)",
+        "React Native (1 toy project)"
     ]} />
 
     <Paragraph>Backend</Paragraph>
     <List items={[
-        "ktor (Kotlin HTTP server)",
-        "Rocket (Rust HTTP server)",
-        "Flask (Python HTTP server)",
-        "MySQL",
+        "ktor (Kotlin HTTP server) (2 projects)",
+        "Rocket (Rust HTTP server) (1 project)",
+        "Discord-rs (Rust Discord API crate) (1 project)",
+        "Flask (Python HTTP server) (1 project)",
+        "MySQL (1 project)",
     ]} />
 
     <Paragraph>Other</Paragraph>
     <List items={[
-        "Unity"
+        "Unity (1 project)"
     ]} />
 </PanelContent>;
 
