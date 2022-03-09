@@ -1,5 +1,5 @@
 import {Project} from "../components/Project";
-import React from 'react';
+import React, { Fragment } from 'react';
 import {Link} from "../components/Typography";
 
 export const PortfolioProject = () => <Project
@@ -70,18 +70,43 @@ export const DegreeAuditProject = () => <Project
     github="https://github.com/jmoore34/degreeaudit"
 />
 
-export const RoleAssigner = () => <Project
+export const RoleAssignerProject = () => <Project
     type="Personal project"
-    tools="React, ktor, Exposed"
+    tools="React, ktor (Kotlin HTTP server)"
     overview="Full-stack React application allowing for anonymized role assignment using custom WebSocket server. Features live, Google Docs-like collaboration, input debouncing, material design, and a custom API."
     github="https://github.com/jmoore34/roleassigner"
     live="https://jmoore34.github.io/RoleAssigner/"
 />
 
-export const CubeClock = () => <Project
+export const CubeClockProject = () => <Project
     type="Personal mini-project"
     tools="React, Typescript, SVG, styled-components"
-    overview="Hue-shifted animated clock PWA featuring SVG cubes written from scratch."
+    overview={
+        <Fragment>
+            Hue-shifted animated clock PWA featuring SVG cubes written from scratch.
+        </Fragment>
+    }
     github="https://github.com/jmoore34/cubeclock"
     live="https://jmoore34.github.io/cubeclock/"
+    footnote={
+        <Fragment>
+            <i style={{color: "yellow"}}>Note: </i>
+            For a related mini-project of mine, see <Link href="https://jmoore34.github.io/binaryclock/">Binary Clock</Link> <Link href="https://github.com/jmoore34/binaryclock" >(Repo)</Link>
+        </Fragment>
+    }
+/>
+
+export const ToborHerdingProject = () => <Project
+    type="Class project"
+    tools="Unity"
+    overview="3rd-person 3D game. Did most of the coding, including movement, camera rigging, AI behavior, game logic, and menus."
+    github="https://github.com/jmoore34/ToborHerding-Unity"
+    live="https://jmoore34.github.io/ToborHerding-WebGL/"
+/>
+
+export const DiceBotProject = () => <Project
+    type="Personal project"
+    tools="Rust, Discord Bot API"
+    overview='A Rust-based Discord bot with a hand-written dice expression parser (e.g. "4d6r1k3*6"). Configured GitHub Actions to automatically build and release Windows, Linux, and MacOS binaries.'
+    github="https://github.com/jmoore34/dicebot/"
 />

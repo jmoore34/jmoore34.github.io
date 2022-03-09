@@ -3,12 +3,14 @@ import * as React from "react";
 import { Link, Paragraph, Span } from "../components/Typography";
 import { List } from "../components/List";
 import {
-    CubeClock,
+    CubeClockProject,
     DegreeAuditProject,
+    DiceBotProject,
     FokusProject,
     IRChatProject,
-    PortfolioProject, RCVProject, RoleAssigner, SDQRProject,
+    PortfolioProject, RCVProject, RoleAssignerProject, SDQRProject,
     ShareCalcProject,
+    ToborHerdingProject,
     TunerProject
 } from "./projects";
 
@@ -28,7 +30,8 @@ export const AboutMePanel = () => <PanelContent title={"About me"}>
         to algorithm design in functional programming languages.
         I also enjoy working on
         backend, full-stack, and mobile development,
-        and lately I've also been branching into cybersecurity.
+        as well as cybersecurity research
+        (especially binary and network exploitation).
     </Paragraph>
     <Span>
         <Link href="https://github.com/jmoore34">GitHub</Link><span> - </span>
@@ -40,7 +43,7 @@ export const AboutMePanel = () => <PanelContent title={"About me"}>
 export const EducationPanel = () => <PanelContent title="Education" subtitle="Overview">
     <List items={[
         "The Georgia Institute of Technology",
-        "M.S. Computer Science, Expected Summer 2023"
+        "M.S. Computer Science (in progress)"
     ]} />
     <Paragraph />
     <List items={[
@@ -54,7 +57,8 @@ export const EducationPanel = () => <PanelContent title="Education" subtitle="Ov
 export const CourseworkPanel = () => <PanelContent title="Education" subtitle="Coursework">
     <Paragraph>Graduate Coursework</Paragraph>
     <List items={[
-        "Information Security"
+        "Information Security",
+        "Network Security"
     ]} />
     <Paragraph>Undergraduate Coursework</Paragraph>
     <List items={[
@@ -77,6 +81,7 @@ export const CourseworkPanel = () => <PanelContent title="Education" subtitle="C
 
 export const LanguagesPanel = () => <PanelContent title="Skills" subtitle="Languages">
     <List items={[
+        "Rust",
         "Kotlin",
         "C",
         "C#",
@@ -88,19 +93,19 @@ export const LanguagesPanel = () => <PanelContent title="Skills" subtitle="Langu
         "ES10 Javascript",
         "Lisp",
         "Bash",
-        "PHP"
     ]} />
 </PanelContent>;
 
 export const FrameworksPanel = () => <PanelContent title="Skills" subtitle="Frameworks">
-    <Paragraph>Web</Paragraph>
+    <Paragraph>Frontend</Paragraph>
     <List items={[
-        "React",
-        "styled-components",
-        "Material UI",
-        "Sass",
-        "Semantic UI"
+        "React/Preact (3 years / 9 projects)", // not including CobraFuel
+        "styled-components/goober (3 years / 8 projects)",
+        "Material UI (2.5 years / 3 projects)",
+        "WPF (C#) (internship)",
+        "Sass (1 project)",
     ]} />
+    
     <Paragraph>Mobile</Paragraph>
     <List items={[
         "Android (Java)",
@@ -109,11 +114,15 @@ export const FrameworksPanel = () => <PanelContent title="Skills" subtitle="Fram
 
     <Paragraph>Backend</Paragraph>
     <List items={[
-        "Flask",
-        "Exposed (Kotlin ORM)",
-        "ktor (Kotlin web server)",
+        "ktor (Kotlin HTTP server)",
+        "Rocket (Rust HTTP server)",
+        "Flask (Python HTTP server)",
         "MySQL",
-        "PostgreSQL"
+    ]} />
+
+    <Paragraph>Other</Paragraph>
+    <List items={[
+        "Unity"
     ]} />
 </PanelContent>;
 
@@ -122,10 +131,9 @@ export const MiscSkillsPanel = () => <PanelContent title="Skills" subtitle="Tool
     <List items={[
         "Git (command-line, SourceTree)",
         "Jira",
-        "Unit testing (Jest, JUnit 5, ktor)",
+        "Unit testing (Jest, JUnit 5, kotest, Rust tests)",
         "Docker",
-        "Linux + Bash",
-        "Vim and Emacs",
+        "Linux, Bash, & Emacs",
         "IntelliJ, WebStorm, Android Studio, VS Code, etc."
     ]} />
 
@@ -134,6 +142,7 @@ export const MiscSkillsPanel = () => <PanelContent title="Skills" subtitle="Tool
         "Binary Analysis Platform (Primus symbolic microexecutor)",
         "Custom Clang tool development (libtooling)",
         "Ghidra",
+        "Cutter",
         "GDB (pwndbg)",
         "AddressSanitizer, UBSan, etc.",
     ]} />
@@ -147,10 +156,12 @@ export const MiscSkillsPanel = () => <PanelContent title="Skills" subtitle="Tool
 
 
 export const ProjectsPanel = () => <PanelContent title="Projects" forceScrollbar> {/*// force scrollbar appearance to prevent scrollbar-based jitter during animations*/}
-    <Paragraph>Click on an item to expand more details.</Paragraph>
+    <Paragraph>Here are my featured publicly-available projects. Click on an item to expand more details.</Paragraph>
     <List items={[
-        { title: "Cube Clock (Fall 2021)", body: <CubeClock /> },
-        { title: "Role Assigner (Spring-Summer 2021)", body: <RoleAssigner /> },
+        { title: "Dice Bot (Winter 2022)", body: <DiceBotProject />},
+        { title: "Tobor Herding Game (Spring 2021)", body: <ToborHerdingProject /> },
+        { title: "Cube Clock (Fall 2021)", body: <CubeClockProject /> },
+        { title: "Role Assigner (Spring-Summer 2021)", body: <RoleAssignerProject /> },
         { title: "Degree Audit Tool (Fall 2020)", body: <DegreeAuditProject /> },
         { title: "Self-Documenting Quine Relay (Summer 2020)", body: <SDQRProject /> },
         { title: "Portfolio Website (Fall 2019)", body: <PortfolioProject /> },
@@ -163,12 +174,15 @@ export const ProjectsPanel = () => <PanelContent title="Projects" forceScrollbar
 
 export const WorkPanel = () => <PanelContent title="Work experience">
 
-    <Paragraph>Workplace experience (click to expand)</Paragraph>
+    <Paragraph>Workplace experience (click on an item to expand)</Paragraph>
     <List items={[
         {
             title: "Software Development Intern (Summer 2021)", body: <>
                 <Paragraph>Tyler Technologies, Plano, TX</Paragraph>
-                <Paragraph>Performed a long-awaited refactor of legacy Silverlight code into cleaner, more modern C# & WPF code with Material Design and MVVM architecture. I worked in two-week sprints, using Jira to write test cases, write dev plans, and open PRs.</Paragraph>
+                <Paragraph>Performed a long-awaited refactor of legacy Silverlight code into cleaner,
+                    more modern C# & WPF code with Material Design and MVVM architecture.
+                    I worked in two-week sprints, using Jira to write test cases, write dev plans,
+                    and open PRs.</Paragraph>
             </>
         },
         {

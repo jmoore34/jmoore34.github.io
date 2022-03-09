@@ -8,12 +8,14 @@ type ProjectProps = {
     overview: ReactNode
     github?: string
     live?: string
+    footnote?: ReactNode
 }
 
-export const Project: React.FC<ProjectProps> = ({type, tools, overview, github, live}) => <div>
+export const Project: React.FC<ProjectProps> = ({type, tools, overview, github, live, footnote}) => <div>
     <Paragraph><b>Type: </b>{type}</Paragraph>
     <Paragraph><b>Tools: </b>{tools}</Paragraph>
     <Paragraph><b>Overview: </b>{overview}</Paragraph>
     {github && <Paragraph><Link href={github}>View on GitHub</Link></Paragraph>}
     {live && <Paragraph><Link href={live}>View live demo</Link></Paragraph>}
+    <Paragraph>{footnote}</Paragraph>
 </div>;
