@@ -41,10 +41,7 @@ export const TunerProject = () => <Project
 export const ShareCalcProject = () => <Project
     type="Class project"
     tools="Android/Java, JUnit 5, UML/Object-Oriented Design"
-    overview="Formally planned scientific, unit, and programmer calculator app with emphasis on sharing calculations
-    with others. Wrote a top-down parser, evaluation engine, and 92 unit tests to allow for computation of arbitrarily
-    complex scientific & bitwise expressions. Acted as team project manager, conducting code reviews, setting deadlines,
-    and approving pull requests."
+    overview="Formally planned scientific, unit, and programmer calculator app for Android with emphasis on sharing calculations with others. Formalized requirements, sequence diagrams, and class diagrams.  Handwrote a lexer and bottom-up parser, object-oriented evaluation engine, and 92 JUnit tests to allow for computation of arbitrarily complex scientific and bitwise expressions. Acted as team project manager, conducting code reviews, setting deadlines, and approving PRs."
     github="https://github.com/MayaIsla/3354-Team-Moc"
 />;
 

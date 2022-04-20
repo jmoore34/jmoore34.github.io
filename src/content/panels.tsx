@@ -36,7 +36,7 @@ export const AboutMePanel = () => <PanelContent title={"About me"}>
     <Span>
         <Link href="https://github.com/jmoore34">GitHub</Link><span> - </span>
         <Link href="https://www.linkedin.com/in/jonathan-t-moore/">LinkedIn</Link><span> - </span>
-        <Link href="https://app.codesignal.com/profile/jonathan_moore">CodeSignal</Link>
+        {/* <Link href="https://app.codesignal.com/profile/jonathan_moore">CodeSignal</Link> */}
     </Span>
 </PanelContent>;
 
@@ -58,7 +58,8 @@ export const CourseworkPanel = () => <PanelContent title="Education" subtitle="C
     <Paragraph>Graduate Coursework</Paragraph>
     <List items={[
         "Information Security",
-        "Network Security"
+        "Network Security",
+        "Human-Computer Interaction (ongoing)"
     ]} />
     <Paragraph>Undergraduate Coursework</Paragraph>
     <List items={[
@@ -83,16 +84,15 @@ export const LanguagesPanel = () => <PanelContent title="Skills" subtitle="Langu
     <List items={[
         "Rust",
         "Kotlin",
-        "C",
+        "Typescript & Javascript",
         "C#",
-        "Java",
         "C++",
+        "C",
+        "Java",
         "SQL",
         "Python",
-        "Typescript",
-        "ES10 Javascript",
-        "Lisp",
-        "Bash",
+        // "Lisp",
+        // "Bash",
     ]} />
 </PanelContent>;
 
@@ -159,7 +159,7 @@ export const MiscSkillsPanel = () => <PanelContent title="Skills" subtitle="Tool
 export const ProjectsPanel = () => <PanelContent title="Projects" forceScrollbar> {/*// force scrollbar appearance to prevent scrollbar-based jitter during animations*/}
     <Paragraph>Here are my featured publicly-available projects. Click on an item to expand more details.</Paragraph>
     <List items={[
-        { title: "Dice Bot (Winter 2022)", body: <DiceBotProject />},
+        { title: "Dice Bot (Winter 2021)", body: <DiceBotProject />},
         { title: "Tobor Herding Game (Spring 2021)", body: <ToborHerdingProject /> },
         { title: "Cube Clock (Fall 2021)", body: <CubeClockProject /> },
         { title: "Role Assigner (Spring-Summer 2021)", body: <RoleAssignerProject /> },
