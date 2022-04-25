@@ -12,7 +12,7 @@ const ItemIcon = styled(MdChevronRight)<{ active?: boolean }>`
 
 const ItemHandle = styled(Span)<{ clickable?: boolean }>`
   margin-left: 5px;
-  ${props => props.clickable && "cursor: pointer; color: #82da7f"};
+  ${props => props.clickable && "cursor: pointer; color: #008000"};
 `;
 
 const ItemBody = styled.div<{ active?: boolean, maxHeight?: any }>`
