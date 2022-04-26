@@ -116,7 +116,7 @@ export const FrameworksPanel = () => <PanelContent title="Skills" subtitle="Fram
     <Paragraph>Backend</Paragraph>
     <List items={[
         "ktor (Kotlin HTTP server) (2 projects)",
-        "Rocket (Rust HTTP server) (1 project)",
+        "Axum (Rust HTTP server) (1 project)",
         "Discord-rs (Rust Discord API crate) (1 project)",
         "Flask (Python HTTP server) (1 project)",
         "MySQL (1 project)",
