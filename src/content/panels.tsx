@@ -3,6 +3,7 @@ import * as React from "react";
 import { Link, Paragraph, Span } from "../components/Typography";
 import { List } from "../components/List";
 import {
+    CPUProject,
     CubeClockProject,
     DegreeAuditProject,
     DiceBotProject,
@@ -170,6 +171,7 @@ export const ProjectsPanel = () => <PanelContent title="Projects" forceScrollbar
         { title: "Fokus (Spring 2019)", body: <FokusProject /> },
         { title: "Web Tuner (Spring 2019)", body: <TunerProject /> },
         { title: "IR Chat (Fall 2018)", body: <IRChatProject /> },
+        { title: "4-bit CPU (Spring 2018)", body: <CPUProject /> },
     ]} />
 </PanelContent>;
 

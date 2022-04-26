@@ -104,6 +104,13 @@ export const ToborHerdingProject = () => <Project
 export const DiceBotProject = () => <Project
     type="Personal project"
     tools="Rust, Discord Bot API"
-    overview='A Rust-based Discord bot with a hand-written dice expression parser (e.g. "4d6r1k3*6"). Configured GitHub Actions to automatically build and release Windows, Linux, and MacOS binaries.'
+    overview='A Rust-based Discord bot with a hand-written dice expression parser (e.g. parsing "4d6r1k3*6"). Configured GitHub Actions to automatically build and release Windows, Linux, and MacOS binaries.'
     github="https://github.com/jmoore34/dicebot/"
+/>
+
+export const CPUProject = () => <Project
+    type="Class project"
+    tools="LogicWorks schematic software"
+    overview="A 4-bit CPU supporting addition, subtraction, comparison, XOR, AND, OR, and NOT instructions. Loading of instruction, operand 1, operand 2, and result registers is synchronized via a 3-bit timer which feeds into a decoder. "
+    footnote={<Link href="cpu.png">View Schematic</Link>}
 />
