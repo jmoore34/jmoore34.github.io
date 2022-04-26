@@ -99,8 +99,8 @@ export const LanguagesPanel = () => <PanelContent title="Skills" subtitle="Langu
 export const FrameworksPanel = () => <PanelContent title="Skills" subtitle="Frameworks">
     <Paragraph>Frontend</Paragraph>
     <List items={[
-        "React/Preact (3 years / 9 projects)", // not including CobraFuel
-        "styled-components/goober (3 years / 8 projects)",
+        "React/Preact (3 years / 8 projects)", // not including CobraFuel
+        "styled-components/goober (3 years / 7 projects)",
         "Material UI (2.5 years / 3 projects)",
         "WPF (C#) (internship)",
         "Sass (1 project)",
@@ -157,7 +157,7 @@ export const MiscSkillsPanel = () => <PanelContent title="Skills" subtitle="Tool
 
 
 export const ProjectsPanel = () => <PanelContent title="Projects" forceScrollbar> {/*// force scrollbar appearance to prevent scrollbar-based jitter during animations*/}
-    <Paragraph>Here are my featured publicly-available projects. Click on an item to expand more details.</Paragraph>
+    <Paragraph>Here are some of my featured publicly-available projects. Click on an item to expand more details.</Paragraph>
     <List items={[
         { title: "Dice Bot (Winter 2021)", body: <DiceBotProject />},
         { title: "Tobor Herding Game (Spring 2021)", body: <ToborHerdingProject /> },
