@@ -160,18 +160,18 @@ export const MiscSkillsPanel = () => <PanelContent title="Skills" subtitle="Tool
 export const ProjectsPanel = () => <PanelContent title="Projects" forceScrollbar> {/*// force scrollbar appearance to prevent scrollbar-based jitter during animations*/}
     <Paragraph>Here are some of my featured publicly-available projects. Click on an item to expand more details.</Paragraph>
     <List items={[
-        { title: "Dice Bot (Winter 2021)", body: <DiceBotProject />},
-        { title: "Tobor Herding Game (Spring 2021)", body: <ToborHerdingProject /> },
-        { title: "Cube Clock (Fall 2021)", body: <CubeClockProject /> },
-        { title: "Role Assigner (Spring-Summer 2021)", body: <RoleAssignerProject /> },
-        { title: "Degree Audit Tool (Fall 2020)", body: <DegreeAuditProject /> },
-        { title: "Self-Documenting Quine Relay (Summer 2020)", body: <SDQRProject /> },
-        { title: "Portfolio Website (Fall 2019)", body: <PortfolioProject /> },
-        { title: "ShareCalc (Fall 2019)", body: <ShareCalcProject /> },
-        { title: "Fokus (Spring 2019)", body: <FokusProject /> },
-        { title: "Web Tuner (Spring 2019)", body: <TunerProject /> },
-        { title: "IR Chat (Fall 2018)", body: <IRChatProject /> },
-        { title: "4-bit CPU (Spring 2018)", body: <CPUProject /> },
+        { title: "Dice Bot", subtitle: "(Rust)",  body: <DiceBotProject />},
+        { title: "Tobor Herding Game", subtitle: "(C#/Unity)", body: <ToborHerdingProject /> },
+        { title: "Cube Clock", subtitle: "(TypeScript/React)", body: <CubeClockProject /> },
+        { title: "Role Assigner", subtitle: "(TypeScript/React, Kotlin/Ktor)", body: <RoleAssignerProject /> },
+        { title: "Degree Audit Tool", subtitle: "(TypeScript/React, Python/Flask)", body: <DegreeAuditProject /> },
+        { title: "Self-Documenting Quine Relay", subtitle: "(Kotlin et al.)", body: <SDQRProject /> },
+        { title: "Portfolio Website", subtitle: "(TypeScript/React)", body: <PortfolioProject /> },
+        { title: "ShareCalc", subtitle: "(Java/Android)", body: <ShareCalcProject /> },
+        { title: "Fokus", subtitle: "(Electron, TypeScript/React)", body: <FokusProject /> },
+        { title: "Web Tuner", subtitle: "(TypeScript/React)", body: <TunerProject /> },
+        { title: "IR Chat", subtitle: "(C#/WinForms, Embedded C++)", body: <IRChatProject /> },
+        { title: "4-bit CPU", subtitle: "(Schematic)", body: <CPUProject /> },
     ]} />
 </PanelContent>;
 

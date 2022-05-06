@@ -15,6 +15,10 @@ const ItemHandle = styled(Span)<{ clickable?: boolean }>`
   ${props => props.clickable && "cursor: pointer; color: #008000"};
 `;
 
+const ItemSubtitle = styled(Span)`
+    color: #8cc148;
+`;
+
 const ItemBody = styled.div<{ active?: boolean, maxHeight?: any }>`
   transition: max-height 1s;
   margin-left: 15px;  
@@ -26,18 +30,20 @@ const ItemBody = styled.div<{ active?: boolean, maxHeight?: any }>`
 type ItemProps = {
     active?: boolean
     title: string | JSX.Element
+    subtitle?: string
     onClick?: () => void
 };
 
-const Item = ({active, children, title, onClick}: PropsWithChildren<ItemProps>) => {
+const Item = ({active, children, title, subtitle, onClick}: PropsWithChildren<ItemProps>) => {
     const bodyRef = useRef<HTMLDivElement>(null);
     return <>
-        <ItemHandle onClick={onClick} clickable={children != null}><ItemIcon active={active}/>{title}</ItemHandle>
+        <ItemHandle onClick={onClick} clickable={children != null}><ItemIcon active={active}/>{title} <ItemSubtitle>{subtitle}</ItemSubtitle></ItemHandle>
         <ItemBody active={active} ref={bodyRef} maxHeight={active ? `${bodyRef.current?.scrollHeight}px` : "0px" } >{children}</ItemBody>
     </>
 };
 type ExpandableListItem = {
     title: string | JSX.Element
+    subtitle?: string
     body?: any
 }
 type ListItem = string | JSX.Element | ExpandableListItem;
@@ -61,8 +67,8 @@ export const List: React.FC<ListProps> = ({items}) => {
                 const title = item as string;
                 return <Item title={title}/>;
             } else {
-                const {title, body} = item as ExpandableListItem;
-                return <Item title={title} onClick={() => toggleSelection(index)} active={selected === index}>{body}</Item>
+                const {title, subtitle, body} = item as ExpandableListItem;
+                return <Item title={title} subtitle={subtitle} onClick={() => toggleSelection(index)} active={selected === index}>{body}</Item>
             }
     })}</>
 

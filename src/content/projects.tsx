@@ -87,7 +87,7 @@ export const CubeClockProject = () => <Project
     live="https://jmoore34.github.io/cubeclock/"
     footnote={
         <Fragment>
-            <i style={{color: "yellow"}}>Note: </i>
+            <i style={{color: "blue"}}>Note: </i>
             For a related mini-project of mine, see <Link href="https://jmoore34.github.io/binaryclock/">Binary Clock</Link> <Link href="https://github.com/jmoore34/binaryclock" >(Repo)</Link>
         </Fragment>
     }
