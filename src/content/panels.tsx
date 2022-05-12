@@ -37,7 +37,8 @@ export const AboutMePanel = () => <PanelContent title={"About me"}>
     </Paragraph>
     <Span>
         <Link href="https://github.com/jmoore34">GitHub</Link><span> - </span>
-        <Link href="https://www.linkedin.com/in/jonathan-t-moore/">LinkedIn</Link><span> - </span>
+        <Link href="https://www.linkedin.com/in/jonathan-t-moore/">LinkedIn</Link>
+        {/* <span> - </span> */}
         {/* <Link href="https://app.codesignal.com/profile/jonathan_moore">CodeSignal</Link> */}
     </Span>
 </PanelContent>;
