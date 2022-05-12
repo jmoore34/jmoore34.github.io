@@ -61,7 +61,7 @@ export const CourseworkPanel = () => <PanelContent title="Education" subtitle="C
     <List items={[
         "Information Security",
         "Network Security",
-        "Human-Computer Interaction (ongoing)"
+        "Human-Computer Interaction"
     ]} />
     <Paragraph>Undergraduate Coursework</Paragraph>
     <List items={[
@@ -186,7 +186,7 @@ export const WorkPanel = () => <PanelContent title="Work experience">
                 <Paragraph>Tyler Technologies, Plano, TX</Paragraph>
                 <Paragraph>Performed a long-awaited refactor of legacy Silverlight code into cleaner,
                     more modern C# & WPF code with Material Design and MVVM architecture.
-                    I worked in two-week sprints, using Jira to write test cases, write dev plans,
+                    I worked in two-week sprints, using Jira to write test cases (TDD), write dev plans,
                     and open PRs.</Paragraph>
             </>
         },
@@ -216,7 +216,6 @@ export const WorkPanel = () => <PanelContent title="Work experience">
     <List items={[
         "Freshman Mentor, Freshman Mentor Program (Fall 2018-Spring 2021)",
         "Cellist, Musica Nova (Spring 2019-Fall 2020)",
-        //"President, Animal Rights Club (Fall 2018-present)",
         "Webmaster, Engineer in Residence [EiR] (Spring 2018-Spring 2020)",
     ]}
     />
