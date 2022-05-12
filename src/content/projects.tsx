@@ -47,7 +47,7 @@ export const ShareCalcProject = () => <Project
 
 export const SDQRProject = () => <Project
     type="Personal project"
-    tools="Kotlin, Unit Testing (kotest)"
+    tools="Kotlin, Unit Testing (kotest); C, C++, C#, Lisp, Python"
     overview="A Python program that outputs a C program that outputs a C++ program that outputs a C# program that outputs a Lisp program that outputs the exact original Python program. Each program in the cycle works independently and runs without any input, network, or disk reads. Moreover, each program in the cycle prints colored documentation about how to compile the next program in the cycle."
     github="https://github.com/jmoore34/quine-relay"
     live="https://bit.ly/quinerelay"
@@ -113,4 +113,11 @@ export const CPUProject = () => <Project
     tools="LogicWorks schematic software"
     overview="A 4-bit CPU supporting addition, subtraction, comparison, XOR, AND, OR, and NOT instructions. Loading of instruction, operand 1, operand 2, and result registers is synchronized via a 3-bit timer which feeds into a decoder. "
     footnote={<Link href="cpu.png">View Schematic</Link>}
+/>
+
+export const StockMarketProject = () => <Project
+    type="Class project"
+    tools="MySQL, Java"
+    overview="Design documents (ER diagram, schema diagram) and SQL for a stock market database. The database was programmatically populated with data via a Java-based simulation."
+    github="https://github.com/jmoore34/stockmarket"
 />

@@ -11,6 +11,7 @@ import {
     IRChatProject,
     PortfolioProject, RCVProject, RoleAssignerProject, SDQRProject,
     ShareCalcProject,
+    StockMarketProject,
     ToborHerdingProject,
     TunerProject
 } from "./projects";
@@ -100,7 +101,7 @@ export const LanguagesPanel = () => <PanelContent title="Skills" subtitle="Langu
 export const FrameworksPanel = () => <PanelContent title="Skills" subtitle="Frameworks">
     <Paragraph>Frontend</Paragraph>
     <List items={[
-        "React/Preact (3 years / 8 projects)", // not including CobraFuel
+        "React/Preact (3 years / 8+ projects)", // not including CobraFuel
         "styled-components/goober (3 years / 7 projects)",
         "Material UI (2.5 years / 3 projects)",
         "WPF (C#) (internship)",
@@ -166,6 +167,7 @@ export const ProjectsPanel = () => <PanelContent title="Projects" forceScrollbar
         { title: "Role Assigner", subtitle: "(TypeScript/React, Kotlin/Ktor)", body: <RoleAssignerProject /> },
         { title: "Degree Audit Tool", subtitle: "(TypeScript/React, Python/Flask)", body: <DegreeAuditProject /> },
         { title: "Self-Documenting Quine Relay", subtitle: "(Kotlin et al.)", body: <SDQRProject /> },
+        { title: "Stock Market Database", subtitle: "(MySQL, Java)", body: <StockMarketProject /> },
         { title: "Portfolio Website", subtitle: "(TypeScript/React)", body: <PortfolioProject /> },
         { title: "ShareCalc", subtitle: "(Java/Android)", body: <ShareCalcProject /> },
         { title: "Fokus", subtitle: "(Electron, TypeScript/React)", body: <FokusProject /> },
