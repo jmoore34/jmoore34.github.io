@@ -16,9 +16,9 @@ const App: React.FC = () => {
   return <HelixDisplay>
     <StartPanel/>
     <AboutMePanel/>
+    <WorkPanel/>
     <EducationPanel/>
     <CourseworkPanel/>
-    <WorkPanel/>
     <LanguagesPanel/>
     <FrameworksPanel/>
     <MiscSkillsPanel/>

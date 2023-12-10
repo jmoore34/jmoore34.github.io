@@ -27,28 +27,26 @@ export const StartPanel = () => <PanelContent title={"Jonathan Moore"} subtitle=
 
 export const AboutMePanel = () => <PanelContent title={"About me"}>
     <Paragraph>
-        I am a Computer Science (<i>summa cum laude</i>) graduate from UT Dallas and grad student at Georgia Tech.
-        I have a love for personal projects, from React-based websites like this one to embedded microcontroller code
-        to algorithm design in functional programming languages.
-        I also enjoy working on
-        backend, full-stack, and mobile development,
-        as well as cybersecurity research
-        (especially binary and network exploitation).
+        I am a Software Engineer II at H-E-B and a Computer Science (<i>summa cum laude</i>) graduate from the University of Texas at Dallas.
+        I love functional programming, whether it be writing Haskell at my job, tinkering with Rust in my free time, or using FP-inspired frameworks like React and Solid in my website commissions. I also have a background in cybersecurity research, with a particular interest in binary and network exploitation.
     </Paragraph>
-    <Span>
-        <Link href="https://github.com/jmoore34">GitHub</Link><span> - </span>
-        <Link href="https://www.linkedin.com/in/jonathan-t-moore/">LinkedIn</Link>
+    <Paragraph>
+        In my free time, I love playing cello in a small ensemble, rock climbing, and hiking.
+    </Paragraph>
+    <Paragraph>
+        <Link href="https://github.com/jmoore34">GitHub</Link>
+        {/* <Link href="https://www.linkedin.com/in/jonathan-t-moore/">LinkedIn</Link> */}
         {/* <span> - </span> */}
         {/* <Link href="https://app.codesignal.com/profile/jonathan_moore">CodeSignal</Link> */}
-    </Span>
+    </Paragraph>
 </PanelContent>;
 
 export const EducationPanel = () => <PanelContent title="Education" subtitle="Overview">
-    <List items={[
+    {/* <List items={[
         "The Georgia Institute of Technology",
         "M.S. Computer Science (in progress)"
     ]} />
-    <Paragraph />
+    <Paragraph /> */}
     <List items={[
         "The University of Texas at Dallas",
         "B.S. Computer Science, Awarded May 2021",
@@ -85,21 +83,30 @@ export const CourseworkPanel = () => <PanelContent title="Education" subtitle="C
 
 export const LanguagesPanel = () => <PanelContent title="Skills" subtitle="Languages">
     <List items={[
+        "Haskell",
+        "SQL (PostgreSQL)",
         "Rust",
         "Kotlin",
-        "Typescript & Javascript",
+        "Typescript",
         "C#",
         "C++",
         "C",
         "Java",
-        "SQL",
         "Python",
         // "Lisp",
         // "Bash",
     ]} />
 </PanelContent>;
 
-export const FrameworksPanel = () => <PanelContent title="Skills" subtitle="Frameworks">
+export const FrameworksPanel = () => <PanelContent title="Skills" subtitle="Framework Experience">
+    <Paragraph>Backend</Paragraph>
+    <List items={[
+        "Servant (Haskell) (as a SE I and SE II)",
+        "ktor (Kotlin HTTP server) (2 projects)",
+        "Axum (Rust HTTP server) (1 project)",
+        "Discord-rs (Rust Discord API crate) (1 project)",
+        "Flask (Python HTTP server) (1 project)",
+    ]} />
     <Paragraph>Frontend</Paragraph>
     <List items={[
         "React/Preact (3 years / 8+ projects)", // not including CobraFuel
@@ -108,21 +115,14 @@ export const FrameworksPanel = () => <PanelContent title="Skills" subtitle="Fram
         "WPF (C#) (internship)",
         "Sass (1 project)",
     ]} />
-    
+
     <Paragraph>Mobile</Paragraph>
     <List items={[
         "Android (Java) (1 project)",
         "React Native (1 toy project)"
     ]} />
 
-    <Paragraph>Backend</Paragraph>
-    <List items={[
-        "ktor (Kotlin HTTP server) (2 projects)",
-        "Axum (Rust HTTP server) (1 project)",
-        "Discord-rs (Rust Discord API crate) (1 project)",
-        "Flask (Python HTTP server) (1 project)",
-        "MySQL (1 project)",
-    ]} />
+
 
     <Paragraph>Other</Paragraph>
     <List items={[
@@ -130,12 +130,12 @@ export const FrameworksPanel = () => <PanelContent title="Skills" subtitle="Fram
     ]} />
 </PanelContent>;
 
-export const MiscSkillsPanel = () => <PanelContent title="Skills" subtitle="Tools">
+export const MiscSkillsPanel = () => <PanelContent title="Skills" subtitle="Development Tools">
     <Paragraph>Software Development</Paragraph>
     <List items={[
         "Git (command-line, SourceTree)",
         "Jira",
-        "Unit testing (Jest, JUnit 5, kotest, Rust tests)",
+        "Unit testing (Jest, JUnit 5, kotest, Rus]t tests)",
         "Docker",
         "Linux, Bash, & Emacs",
         "IntelliJ, WebStorm, Android Studio, VS Code, etc."
@@ -162,7 +162,7 @@ export const MiscSkillsPanel = () => <PanelContent title="Skills" subtitle="Tool
 export const ProjectsPanel = () => <PanelContent title="Projects" forceScrollbar> {/*// force scrollbar appearance to prevent scrollbar-based jitter during animations*/}
     <Paragraph>Here are some of my featured publicly-available projects. Click on an item to expand more details.</Paragraph>
     <List items={[
-        { title: "Dice Bot", subtitle: "(Rust)",  body: <DiceBotProject />},
+        { title: "Dice Bot", subtitle: "(Rust)", body: <DiceBotProject /> },
         { title: "Tobor Herding Game", subtitle: "(C#/Unity)", body: <ToborHerdingProject /> },
         { title: "Cube Clock", subtitle: "(TypeScript/React)", body: <CubeClockProject /> },
         { title: "Role Assigner", subtitle: "(TypeScript/React, Kotlin/Ktor)", body: <RoleAssignerProject /> },
@@ -183,16 +183,19 @@ export const WorkPanel = () => <PanelContent title="Work experience">
     <Paragraph>Workplace experience (click on an item to expand)</Paragraph>
     <List items={[
         {
-            title: "Software Development Intern (Summer 2021)", body: <>
-                <Paragraph>Tyler Technologies, Plano, TX</Paragraph>
-                <Paragraph>Performed a long-awaited refactor of legacy Silverlight code into cleaner,
-                    more modern C# & WPF code with Material Design and MVVM architecture.
-                    I worked in two-week sprints, using Jira to write test cases (TDD), write dev plans,
-                    and open PRs.</Paragraph>
+            title: "Software Engineer II (November 2023 - Present)", body: <>
+                <Paragraph>H-E-B, San Antonio, TX (Remote)</Paragraph>
+                <Paragraph>As a Haskell backend engineer, I rewrote one of our least performant queries to cut its completion time from over a day to under 8 minutes (a 12,000x performance increase). I also modified our message storage infrastructure to automatically clean up after itself, safely deleting over 100 million stale records in its pilot, to permanently boost the performance of historical queries.</Paragraph>
             </>
         },
         {
-            title: "Research Assistant (Spring 2020-Winter 2020)", body: <>
+            title: "Software Engineer II (November 2023 - Present)", body: <>
+                <Paragraph>H-E-B, San Antonio, TX (Remote)</Paragraph>
+                <Paragraph>Pairing with a staff engineer, I created a major redesign to our database schema that would reduce data anomalies and allow for efficient point-in-time historical queries of data that was previously very expensive to query historically. I also improved the clarity of all our SQL queries by integrating a quasiquoter into our Haskell codebase. With an eye for detail, I caught sneaky yet important bugs in code review. Twice, I caught sneaky edge cases with our team's planned redesign, which I presented to the team with data analysis and pros and cons of multiple solutions.</Paragraph>
+            </>
+        },
+        {
+            title: "Research Assistant (Spring 2020 - Winter 2020)", body: <>
                 <Paragraph>The University of Texas at Dallas, Richardson, TX (Dr. Shiyi Wei's Lab)</Paragraph>
                 <Paragraph>
                     Worked on a team of PhD students creating a framework to evaluate fuzz testers via artificial bug
@@ -206,18 +209,18 @@ export const WorkPanel = () => <PanelContent title="Work experience">
             title: "Orientation Leader (Spring 2018-Summer 2019)", body: <>
                 <Paragraph>The University of Texas at Dallas, Richardson, TX</Paragraph>
                 <Paragraph>
-                Lead tours, small groups, and academic advising. Handled confidential student records. CPR, LGBT+,
-                Title IX, multicultural, and disability trained. Abundant interpersonal communication, leadership,
-                and teamwork. Acted as Campus Security Authority (CSA). As a returner, mentored new OLs.
+                    Lead tours, small groups, and academic advising. Handled confidential student records. CPR, LGBT+,
+                    Title IX, multicultural, and disability trained. Abundant interpersonal communication, leadership,
+                    and teamwork. Acted as Campus Security Authority (CSA). As a returner, mentored new OLs.
                     <b> Awarded Returning Orientation Leader of the Year.</b>
                 </Paragraph></>
         }
     ]} />
-    <Paragraph>Extracurriculars</Paragraph>
+    {/* <Paragraph>Extracurriculars</Paragraph>
     <List items={[
         "Freshman Mentor, Freshman Mentor Program (Fall 2018-Spring 2021)",
         "Cellist, Musica Nova (Spring 2019-Fall 2020)",
         "Webmaster, Engineer in Residence [EiR] (Spring 2018-Spring 2020)",
     ]}
-    />
+    /> */}
 </PanelContent>;

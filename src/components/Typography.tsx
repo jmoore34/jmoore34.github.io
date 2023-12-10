@@ -1,5 +1,4 @@
 import styled, {css} from 'styled-components';
-import {string} from "prop-types";
 
 export const fontFamily = "monospace";
 
@@ -28,7 +27,7 @@ type ParagraphProps = {
 export const Paragraph = styled.p<ParagraphProps>`
   ${bodyTextFormatting}
   ${props => props.color && "color: " + props.color}; // override color only if requested
-  
+
   // if requested to hide when vertical, use 'display: none' when horizontal
   @media (orientation: landscape) {
     ${props => props.showOnlyWhenVertical && "display: none"};
