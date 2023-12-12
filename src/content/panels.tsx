@@ -189,7 +189,7 @@ export const WorkPanel = () => <PanelContent title="Work experience">
             </>
         },
         {
-            title: "Software Engineer II (October 2022 - November 2023)", body: <>
+            title: "Software Engineer I (October 2022 - November 2023)", body: <>
                 <Paragraph>H-E-B, San Antonio, TX (Remote)</Paragraph>
                 <Paragraph>Pairing with a staff engineer, I created a major redesign to our database schema that would reduce data anomalies and allow for efficient point-in-time historical queries of data that was previously very expensive to query historically. I also improved the clarity of all our SQL queries by integrating a quasiquoter into our Haskell codebase. With an eye for detail, I caught sneaky yet important bugs in code review. Twice, I caught sneaky edge cases with our team's planned redesign, which I presented to the team with data analysis and pros and cons of multiple solutions.</Paragraph>
             </>
