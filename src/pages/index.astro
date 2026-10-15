@@ -32,7 +32,7 @@ import Xwiper from "xwiper";
 		panelCount.toString(),
 	);
 	panels.forEach((panel, idx) =>
-		panel.style.setProperty("--panel-index", idx.toString()),
+		(panel as HTMLElement).style.setProperty("--panel-index", idx.toString()),
 	);
 	var currentSlide = 0;
 	function incrementSlide(delta: number) {
