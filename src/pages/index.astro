@@ -1,11 +1,184 @@
 ---
-import Welcome from '../components/Welcome.astro';
-import Layout from '../layouts/Layout.astro';
-
+import Welcome from "../components/Welcome.astro";
+import Layout from "../layouts/Layout.astro";
+import Xwiper from "xwiper";
 // Welcome to Astro! Wondering what to do next? Check out the Astro documentation at https://docs.astro.build
 // Don't want to use any of this? Delete everything in this file, the `assets`, `components`, and `layouts` directories, and start fresh.
 ---
 
 <Layout>
-	<Welcome />
+	<div class="container">
+		<div class="scene">
+			<div class="helix">
+				<div class="floor">footer</div>
+				<section class="panel">a</section>
+				<section class="panel">b</section>
+				<section class="panel">c</section>
+				<section class="panel">d</section>
+				<section class="panel">e</section>
+				<section class="panel">f</section>
+				<section class="panel">g</section>
+				<section class="panel">h</section>
+				<section class="panel">i</section>
+				<section class="panel">j</section>
+			</div>
+		</div>
+	</div>
 </Layout>
+
+<script>
+	const panels = document.querySelectorAll(".panel");
+	const panelCount = panels.length;
+	document.documentElement.style.setProperty(
+		"--panel-count",
+		panelCount.toString(),
+	);
+	panels.forEach((panel, idx) =>
+		panel.style.setProperty("--panel-index", idx.toString()),
+	);
+	var currentSlide = 0;
+	function incrementSlide(delta: number) {
+		currentSlide = (currentSlide + delta + panelCount) % panelCount;
+		document.documentElement.style.setProperty(
+			"--current-index",
+			currentSlide.toString(),
+		);
+	}
+	document.addEventListener("keydown", (e) => {
+		if (e.key == "ArrowRight") {
+			incrementSlide(1);
+		} else if (e.key == "ArrowLeft") {
+			incrementSlide(-1);
+		}
+	});
+	var touchStartX: number;
+	const touchThreshold = 50;
+	document.addEventListener("touchstart", (e) => {
+		touchStartX = e.changedTouches[0].screenX;
+	});
+	document.addEventListener("touchend", (e) => {
+		const delta = e.changedTouches[0].screenX - touchStartX;
+		if (delta > touchThreshold) {
+			incrementSlide(1);
+		} else if (delta < -1 * touchThreshold) {
+			incrementSlide(-1);
+		}
+	});
+</script>
+
+<style lang="scss">
+	:root {
+		--grid-size: 2500px;
+		--grid-square-size: 100px;
+		--grid-large-square-size: calc(var(--grid-square-size) * 5);
+		--panel-height: 50vh;
+		--panel-width: 50vw;
+		--panels-per-circle: 8.3;
+		--panels-per-rainbow: 8.7;
+		--panel-angular-width: calc(2 * pi / var(--panels-per-circle));
+		--radius: calc(
+			0.5 * var(--panel-width) / tan(var(--panel-angular-width) / 2)
+		);
+		--per-panel-vertical-offset: 25vh;
+		--current-index: 0;
+	}
+
+	.container {
+		display: flex;
+		justify-content: center;
+		align-items: center;
+		width: 100vw;
+		height: 100vh;
+		overflow: hidden;
+	}
+
+	.scene {
+		width: var(--panel-width);
+		height: var(--panel-height);
+		perspective: 1000px;
+	}
+
+	.helix {
+		width: 100%;
+		height: 100%;
+		position: absolute;
+		transform-style: preserve-3d;
+		transition: transform 1s;
+		transform: translateZ(calc(-1 * var(--radius)))
+			rotateY(
+				calc(
+					1rad * -1 * var(--current-index) *
+						var(--panel-angular-width)
+				)
+			)
+			translateY(
+				calc(var(--per-panel-vertical-offset) * var(--current-index))
+			);
+	}
+
+	.floor {
+		position: absolute;
+		inset: calc(-2500px);
+		overflow: visible;
+
+		transform: rotateX(90deg) // Tilt 90 degrees so that it's perpendicular to the panels
+			translateZ(calc(-1 * var(--panel-height) * 0.6)) // Push it down under the lowest panel
+			rotateZ(
+				17deg
+			); // Rotate it a bit so that the grid lines don't line up with the first panel
+
+		background-size:
+			100% 100%,
+			// size for distance fading overlay
+			var(--grid-square-size) var(--grid-square-size),
+			// Sizes for the horizonal & vertical thin lines
+			var(--grid-square-size) var(--grid-square-size),
+			var(--grid-large-square-size) var(--grid-large-square-size),
+			// Sizes for the horizontal & vertical thick lines
+			var(--grid-large-square-size) var(--grid-large-square-size);
+		background-image:
+			radial-gradient(circle, transparent 0%, white 90%),
+			// distance fade overlay
+			linear-gradient(to right, #818181 1px, transparent 1px),
+			// thin horizontal lines
+			linear-gradient(to bottom, #818181 1px, transparent 1px),
+			// thin vertical lines
+			linear-gradient(to right, #585858 4px, transparent 1px),
+			// thick horizontal lines
+			linear-gradient(
+					to bottom,
+					#585858 4px,
+					transparent 1px
+				); // thick vertical lines
+	}
+
+	.panel {
+		position: absolute;
+		width: calc(var(--panel-width) - 30px);
+		height: var(--panel-height);
+		max-height: 100%;
+		overflow-x: hidden;
+		overflow-y: auto;
+		z-index: calc(
+			var(--panel-count) - abs(var(--panel-count) - var(--panel-index))
+		);
+
+		background-color: hsla(0deg, 100%, 100%, 0.6);
+		border: 5px
+			hsla(
+				calc(1turn * var(--panel-index) / var(--panels-per-rainbow)),
+				90%,
+				50%,
+				0.9
+			)
+			solid;
+
+		transform: rotateY(
+				calc(1rad * var(--panel-index) * var(--panel-angular-width))
+			)
+			translateZ(var(--radius))
+			translateY(
+				calc(-1 * var(--per-panel-vertical-offset) * var(--panel-index))
+			);
+	}
+</style>
