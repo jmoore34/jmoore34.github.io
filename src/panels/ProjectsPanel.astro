@@ -1,0 +1,246 @@
+---
+import ListItem from "../components/ListItem.astro";
+import Panel from "../components/Panel.astro";
+---
+
+<Panel>
+    <h1>Projects</h1>
+    <p>
+        Here are some of my featured open-source projects. Click on an item to
+        expand more details.
+    </p>
+    <ListItem title="postgres_named_parameters" subtitle="(Rust library)">
+        <p><b>Type:</b> Personal project (library)</p>
+        <p><b>Tools:</b> Rust</p>
+        <p>
+            <b>Overview: </b>A lightweight macro wrapper around the postgres
+            crate which gives you the ergonomics of named parameters in your raw
+            SQL queries. Under the hood, your named parameters are transformed
+            into numbered parameters at compile time.
+        </p>
+        <p>
+            <a href="https://github.com/jmoore34/postgres-named-parameters"
+                >View on GitHub</a
+            >
+        </p><p>
+            <a
+                href="https://docs.rs/postgres-named-parameters/0.1.0/postgres_named_parameters/"
+                >View on docs.rs</a
+            >
+        </p>
+    </ListItem>
+    <ListItem title="hanzi-svg" subtitle="(TypeScript library)">
+        <p><b>Type:</b> Personal project (library)</p>
+        <p><b>Tools:</b> TypeScript</p>
+        <p>
+            <b>Overview: </b>A TypeScript library to create animated SVGs of
+            hanzi (Chinese character) stroke order animations. While a library
+            for stroke order animations (<a
+                href="https://www.npmjs.com/package/hanzi-writer"
+                >hanzi-writer</a
+            >) exists, I wanted something more lightweight (no
+            <code>requestAnimationFrame()</code>`) to maximize performance for my use case
+            (namely, including stroke order animations in my Anki flashcard
+            deck). Thus, I studied the SVG spec in order to leverage SVG-native
+            animation capabilities and get the bundle size down to 3kb.
+        </p>
+        <p>
+            <a href="https://github.com/jmoore34/hanzi-svg.js">View on GitHub</a
+            >
+        </p><p>
+            <a href="https://www.npmjs.com/package/hanzi-svg">View on NPM</a>
+        </p>
+    </ListItem>
+    <ListItem
+        title="Deployment Environments for GitLab"
+        subtitle="(Browser extension)"
+    >
+        <p><b>Type:</b> Work project</p>
+        <p><b>Tools:</b> JavaScript</p>
+        <p>
+            <b>Overview: </b>A browser extension to query the status of deployed
+            environments and overlay them in the GitLab commits view, obviating
+            the need to manually compare which commits are included in each
+            environment. After publishing this extension, it was adopted by the
+            entire team and is used daily to make standup more efficient.
+        </p>
+        <p>
+            <a href="https://github.com/jmoore34/gitlab-deployment-environments"
+                >View on GitHub</a
+            >
+        </p>
+        <p>
+            <a
+                href="https://chromewebstore.google.com/detail/deployment-environments-f/ihenkkccaaacabdgcendjljnoolncbbg"
+                >View Chrome Extension</a
+            >
+        </p>
+        <p>
+            <a
+                href="https://addons.mozilla.org/en-US/firefox/addon/deployment-environments-gitlab/"
+                >View Firefox Extension</a
+            >
+        </p>
+    </ListItem>
+    <ListItem title="Dice Bot" subtitle="(Rust)">
+        <p><b>Type:</b> Personal project</p>
+        <p><b>Tools:</b> Rust, Discord bot API</p>
+        <p>
+            <b>Overview: </b>A Rust-based Discord bot with a hand-written dice
+            expression parser (e.g. parsing "4d6r1k3*6"). Configured GitHub
+            Actions to automatically build and release Windows, Linux, and MacOS
+            binaries.
+        </p>
+        <p><a href="https://github.com/jmoore34/dicebot/">View on GitHub</a></p>
+    </ListItem>
+    <ListItem title="Tobor Herding Game" subtitle="(C#/Unity)">
+        <p><b>Type:</b> Class project</p>
+        <p><b>Tools:</b> C#/Unity</p>
+        <p>
+            <b>Overview: </b>3rd-person 3D game. Did most of the coding,
+            including movement, camera rigging, AI behavior, game logic, and
+            menus.
+        </p>
+        <p>
+            <a href="https://github.com/jmoore34/ToborHerding-Unity"
+                >View on GitHub</a
+            >
+        </p><p>
+            <a href="https://jmoore34.github.io/ToborHerding-WebGL/"
+                >View live demo</a
+            >
+        </p>
+    </ListItem>
+    <ListItem title="Cube Clock" subtitle="(TypeScript/React)">
+        <p><b>Type:</b> Personal mini-project</p>
+        <p><b>Tools:</b> React, Typescript, SVG, styled-components</p>
+        <p>
+            <b>Overview: </b>Hue-shifted animated clock PWA featuring SVG cubes
+            written from scratch.
+        </p>
+        <p>
+            <a href="https://github.com/jmoore34/cubeclock">View on GitHub</a>
+        </p>
+        <p>
+            <a href="https://jmoore34.github.io/cubeclock/">View live demo</a>
+        </p>
+        <p>
+            <b>Note:</b> For a related mini-project of mine, see <a
+                href="https://jmoore34.github.io/binaryclock/">Binary Clock</a
+            >
+        </p> (<a href="https://github.com/jmoore34/binaryclock">repo</a>)
+    </ListItem>
+    <ListItem title="Role Assigner" subtitle="(TypeScript/React, Kotlin/Ktor)">
+        <p><b>Type:</b> Personal project</p>
+        <p><b>Tools:</b> React, Ktor</p>
+        <p>
+            <b>Overview: </b>Full-stack React application allowing for
+            anonymized role assignment using custom WebSocket server. Features
+            live, Google Docs-like collaboration, input debouncing, material
+            design, and a custom API.
+        </p>
+        <p>
+            <a href="https://github.com/jmoore34/roleassigner">View on GitHub</a
+            >
+        </p>
+    </ListItem>
+    <ListItem
+        title="Degree Audit Tool"
+        subtitle="(TypeScript/React, Python/Flask)"
+    >
+        <p><b>Type:</b> Senior design project</p>
+        <p><b>Tools:</b> React, Flask</p>
+        <p>
+            <b>Overview: </b>Full-stack React application reimagining how
+            students plan and share their degree plans, increasing advising
+            efficiency. Students click on classes in a degree flowchart to
+            assign color-coded semesters and then can export their degree plan
+            as an image. Includes drag-and-drop SHA-256 password-authenticated
+            flowchart editor for advisors using custom REST API.
+        </p>
+        <p>
+            <a href="https://github.com/jmoore34/degreeaudit">View on GitHub</a>
+        </p>
+    </ListItem>
+    <ListItem title="Quine Relay" subtitle="(Kotlin, C, C++, C#, Lisp, Python)">
+        <p><b>Type:</b> Personal project</p>
+        <p>
+            <b>Tools:</b> Kotlin, Unit Testing (kotest); C, C++, C#, Lisp, Python
+        </p>
+        <p>
+            <b>Overview: </b>A <i>quine</i> is a program that outputs its own exact
+            source code. I designed an algorithm, implemented in Kotlin, to deterministically
+            create a "quine relay", namely: a Python program that outputs a C program
+            that outputs a C++ program that outputs a C# program that outputs a Lisp
+            program that outputs the exact original Python program. Each program in
+            the cycle works independently and runs without any input, network, expensive
+            computation, or disk reads. Moreover, each program in the cycle prints
+            colored documentation about how to compile the next program in the cycle.
+        </p>
+        <p>
+            <a href="https://github.com/jmoore34/quine-relay">View on GitHub</a>
+        </p>
+        <p><a href="https://bit.ly/quinerelay">View live demo</a></p>
+    </ListItem>
+    <ListItem title="ShareCalc" subtitle="(Java/Android)">
+        <p><b>Type:</b> Class project</p>
+        <p>
+            <b>Tools:</b> Android/Java, JUnit 5, UML/Object-Oriented Design
+        </p>
+        <p>
+            <b>Overview: </b>Formally planned scientific, unit, and programmer
+            calculator app for Android with emphasis on sharing calculations
+            with others. Formalized requirements, sequence diagrams, and class
+            diagrams. Handwrote a lexer and bottom-up parser, object-oriented
+            evaluation engine, and 92 JUnit tests to allow for computation of
+            arbitrarily complex scientific and bitwise expressions. Acted as
+            primary IC and team lead, conducting code reviews, setting
+            deadlines, and approving PRs.
+        </p>
+        <p>
+            <a href="https://github.com/MayaIsla/3354-Team-Moc"
+                >View on GitHub</a
+            >
+        </p>
+    </ListItem>
+    <ListItem title="Web Tuner" subtitle="(C#/Unity)">
+        <p><b>Type:</b> Personal project</p>
+        <p><b>Tools:</b> React, WebAudio API, Semantic UI</p>
+        <p>
+            <b>Overview: </b>Progressive Web App (PWA) that addressed the
+            problem of inadequate tuner apps for musicians. Unique features like
+            playing multiple octaves concurrently.
+        </p>
+        <p>
+            <a href="https://github.com/jmoore34/tuner">View on GitHub</a>
+        </p><p>
+            <a href="https://jmoore34.github.io/tuner/">View live demo</a>
+        </p>
+    </ListItem>
+    <ListItem title="IR Chat" subtitle="(C++, C#)">
+        <p><b>Type:</b> Personal project</p>
+        <p><b>Tools:</b> Embedded C++, C#</p>
+        <p>
+            <b>Overview: </b>Designed (and constructed) hardware and software to
+            allow two offline computers to send and receive data simultaneously
+            via infrared beams. Used embedded C++ for the microcontroller and C#
+            for the desktop client and GUI.
+        </p>
+        <p>
+            <a href="https://github.com/jmoore34/ir-chat">View on GitHub</a>
+        </p>
+    </ListItem>
+    <ListItem title="4-bit CPU" subtitle="(Schematic)">
+        <p><b>Type:</b> Personal project</p>
+        <p><b>Tools:</b> Embedded C++, C#</p>
+        <p>
+            <b>Overview: </b>A 4-bit CPU supporting addition, subtraction,
+            comparison, XOR, AND, OR, and NOT instructions. Loading of
+            instruction, operand 1, operand 2, and result registers is
+            synchronized via a 3-bit timer which feeds into a decoder.
+        </p>
+        <p>
+            <a href="https://jmoore34.github.io/cpu.png">View Schematic</a>
+        </p>
+    </ListItem>
+</Panel>

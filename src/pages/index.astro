@@ -1,7 +1,11 @@
 ---
-import Welcome from "../components/Welcome.astro";
+import Panel from "../components/Panel.astro";
 import Layout from "../layouts/Layout.astro";
-import Xwiper from "xwiper";
+import AboutMePanel from "../panels/AboutMePanel.astro";
+import StartPanel from "../panels/StartPanel.astro";
+import WorkPanel from "../panels/WorkPanel.astro";
+import EducationPanel from "../panels/EducationPanel.astro";
+import ProjectsPanel from "../panels/ProjectsPanel.astro";
 // Welcome to Astro! Wondering what to do next? Check out the Astro documentation at https://docs.astro.build
 // Don't want to use any of this? Delete everything in this file, the `assets`, `components`, and `layouts` directories, and start fresh.
 ---
@@ -10,16 +14,11 @@ import Xwiper from "xwiper";
 	<div class="scene">
 		<div class="helix">
 			<div class="floor">footer</div>
-			<section class="panel">a</section>
-			<section class="panel">b</section>
-			<section class="panel">c</section>
-			<section class="panel">d</section>
-			<section class="panel">e</section>
-			<section class="panel">f</section>
-			<section class="panel">g</section>
-			<section class="panel">h</section>
-			<section class="panel">i</section>
-			<section class="panel">j</section>
+			<StartPanel />
+			<AboutMePanel />
+			<WorkPanel />
+			<EducationPanel />
+			<ProjectsPanel />
 		</div>
 	</div>
 </Layout>
@@ -32,7 +31,10 @@ import Xwiper from "xwiper";
 		panelCount.toString(),
 	);
 	panels.forEach((panel, idx) =>
-		(panel as HTMLElement).style.setProperty("--panel-index", idx.toString()),
+		(panel as HTMLElement).style.setProperty(
+			"--panel-index",
+			idx.toString(),
+		),
 	);
 	var currentSlide = 0;
 	function incrementSlide(delta: number) {
@@ -64,13 +66,13 @@ import Xwiper from "xwiper";
 	});
 </script>
 
-<style lang="scss">
+<style lang="scss" is:global>
 	:root {
 		--grid-size: 2500px;
 		--grid-square-size: 100px;
 		--grid-large-square-size: calc(var(--grid-square-size) * 5);
-		--panel-height: 50vh;
-		--panel-width: 50vw;
+		--panel-height: 60vh;
+		--panel-width: 60vw;
 		--panels-per-circle: 8.3;
 		--panels-per-rainbow: 8.7;
 		--panel-angular-width: calc(2 * pi / var(--panels-per-circle));
@@ -148,35 +150,5 @@ import Xwiper from "xwiper";
 					#585858 4px,
 					transparent 1px
 				); // thick vertical lines
-	}
-
-	.panel {
-		position: absolute;
-		width: calc(var(--panel-width) - 30px);
-		height: var(--panel-height);
-		max-height: 100%;
-		overflow-x: hidden;
-		overflow-y: auto;
-		z-index: calc(
-			var(--panel-count) - abs(var(--panel-count) - var(--panel-index))
-		);
-
-		background-color: hsla(0deg, 100%, 100%, 0.6);
-		border: 5px
-			hsla(
-				calc(1turn * var(--panel-index) / var(--panels-per-rainbow)),
-				90%,
-				50%,
-				0.9
-			)
-			solid;
-
-		transform: rotateY(
-				calc(1rad * var(--panel-index) * var(--panel-angular-width))
-			)
-			translateZ(var(--radius))
-			translateY(
-				calc(-1 * var(--per-panel-vertical-offset) * var(--panel-index))
-			);
 	}
 </style>

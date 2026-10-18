@@ -1,0 +1,17 @@
+---
+export interface Props {
+    type: string
+    tools: string
+    github?: string
+    live?: string
+}
+---
+
+
+    <Paragraph><b>Type: </b>{type}</Paragraph>
+    <Paragraph><b>Tools: </b>{tools}</Paragraph>
+    <Paragraph><b>Overview: </b>{overview}</Paragraph>
+    {github && <Paragraph><Link href={github}>View on GitHub</Link></Paragraph>}
+    {live && <Paragraph><Link href={live}>View live demo</Link></Paragraph>}
+    <Paragraph>{footnote}</Paragraph>
+</div>;

@@ -1,0 +1,40 @@
+---
+import ListItem from "../components/ListItem.astro";
+import Panel from "../components/Panel.astro";
+---
+
+<Panel>
+    <h1>Workplace experience</h1>
+    <h2>Click on an item to expand</h2>
+    <ListItem
+        title="Software Engineer II, H-E-B"
+        subtitle="(November 2023 - Present)"
+    >
+        <p>H-E-B, San Antonio, TX (Remote)</p>
+        <p>
+            As a Haskell backend engineer, I rewrote one of our least performant
+            queries to cut its completion time from over a day to under 8
+            minutes (a 12,000x performance increase). I also modified our
+            message storage infrastructure to automatically clean up after
+            itself, safely deleting over 100 million stale records in its pilot,
+            to permanently boost the performance of historical queries.
+        </p></ListItem
+    >
+    <ListItem
+        title="Software Engineer I, H-E-B"
+        subtitle="(October 2022 - November 2023)"
+    >
+        <p>H-E-B, San Antonio, TX (Remote)</p>
+        <p>
+            Pairing with a staff engineer, I created a major redesign to our
+            database schema that would reduce data anomalies and allow for
+            efficient point-in-time historical queries of data that was
+            previously very expensive to query historically. I also improved the
+            clarity of all our SQL queries by integrating a quasiquoter into our
+            Haskell codebase. With an eye for detail, I caught sneaky yet
+            important bugs in code review. Twice, I caught sneaky edge cases
+            with our team's planned redesign, which I presented to the team with
+            data analysis and pros and cons of multiple solutions.
+        </p></ListItem
+    >
+</Panel>

@@ -1,0 +1,21 @@
+---
+import Panel from "../components/Panel.astro";
+---
+
+<Panel>
+    <h1>Jonathan Moore</h1>
+    <h2>Portfolio</h2>
+    <p class="portrait-only" style="color:red">
+        Note: To best experience this site, rotate your screen from portrait to
+        landscape.
+    </p>
+    <p>Use arrow keys or swipe left/right to navigate.</p>
+</Panel>
+
+<style is:global>
+    .portrait-only {
+        @media (orientation: landscape) {
+            display: none;
+        }
+    }
+</style>

@@ -1,0 +1,42 @@
+---
+interface Props {
+    title: string;
+    subtitle?: string;
+}
+---
+
+<details>
+    <summary>
+        {Astro.props.title}
+        <span> {Astro.props.subtitle}</span>
+    </summary>
+    <div><slot /></div>
+</details>
+
+<script>
+    var listGroupCounter = 0;
+    document.querySelectorAll("details").forEach((listElement) => {
+        const listParent = listElement.parentElement;
+        if (!listParent) {
+            return; // should't happen
+        }
+        if (!listParent.dataset.listGroup) {
+            listParent.dataset.listGroup = listGroupCounter.toString();
+            listGroupCounter++;
+        }
+        // Give all list elements in each group the same name so
+        // only one stays open at a time.
+        listElement.setAttribute("name", listParent.dataset.listGroup);
+    });
+</script>
+
+<style is:global lang="scss">
+    summary {
+        color: green;
+        cursor: pointer;
+        user-select: none;
+    }
+    summary > span {
+        color: #8cc148;
+    }
+</style>

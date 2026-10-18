@@ -1,0 +1,51 @@
+<section class="panel">
+    <slot />
+</section>
+
+<style lang="scss" is:global>
+    .panel {
+        font-family: monospace;
+        h1::before,
+        h2::before {
+            content: "// ";
+        }
+        a {
+            color: green;
+            text-decoration: none;
+        }
+        :not(h1,h2) {
+            font-size: 18px;
+        }
+
+        padding: 4%;
+        box-sizing: border-box;
+
+        position: absolute;
+        width: calc(var(--panel-width) - 30px);
+        height: var(--panel-height);
+        max-height: 100%;
+        overflow-x: hidden;
+        overflow-y: auto;
+        z-index: calc(
+            var(--panel-count) - abs(var(--panel-count) - var(--panel-index))
+        );
+
+        background-color: hsla(0deg, 100%, 100%, 0.6);
+        border: 5px
+            hsla(
+                calc(1turn * var(--panel-index) / var(--panels-per-rainbow)),
+                90%,
+                50%,
+                0.9
+            )
+            solid;
+
+        transform: rotateY(
+                calc(1rad * var(--panel-index) * var(--panel-angular-width))
+            )
+            translateZ(var(--radius))
+            translateY(
+                calc(-1 * var(--per-panel-vertical-offset) * var(--panel-index))
+            );
+    }
+</style>
