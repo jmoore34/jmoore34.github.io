@@ -9,12 +9,18 @@
         h2::before {
             content: "// ";
         }
+
         a {
             color: green;
             text-decoration: none;
         }
-        :not(h1,h2) {
+        :not(h1, h2) {
             font-size: 18px;
+        }
+
+        &:has(> details) {
+            // prevent jitter on section expansion
+            overflow-y: scroll !important;
         }
 
         padding: 4%;

@@ -1,0 +1,72 @@
+---
+import Code from "../components/Code.astro";
+import ListItem from "../components/ListItem.astro";
+import Panel from "../components/Panel.astro";
+---
+
+<Panel>
+    <h1>Database Skills</h1>
+    <p>4+ years professional experience. Click each for more details.</p>
+    <ListItem title="Change Data Capture/GoldenGate historical data pipeline">
+        Co-lead and co-designed a sophisticated CDC pipeline which captured the
+        full change history of 31 replicated tables (i.e. reliable historical
+        data that would otherwise be inaccessible to the company) and also
+        provided efficient access to current-state data. To achive this, I
+        designed a system of partial indices, views, and triggers using advisory
+        locks. This system improves on both our prior ideas of separate
+        historical and current tables (which opened the door to data
+        discrepancies), TIBCO-powered message queues (which was vulnerable to
+        data loss), and unique indices (which, unlike advisory locks, caused
+        GoldenGate to not use BATCHSQL.) I also designed an automated validation
+        processor to give confidence that the new data pipeline's data was
+        indeed correct so that we could deploy to prod confidently. Compared to
+        the TIBCO approach, delivering this CDC pipeline resulted in a decrease
+        of row discrepancy rate in our tables from up to 10% to 0% (perfect
+        match).</ListItem
+    >
+    <ListItem
+        title="PostgreSQL internals"
+        subtitle="(MVCC system columns (ctid, xmin, xmax), B+
+            tree index design)"
+        >In order to monitor the in-progress, pre-commit status of a massive 2
+        billion row data migration, I studied Postgres MVCC design in order to
+        randomly sample the table's internal system columns (ctid, xmin, xmax)
+        to efficiently estimate the approximate completion percentage. Moreover,
+        in order to better understand <Code>EXPLAIN</Code> output, I read up on the
+        design of B+ trees and bitmaps.
+    </ListItem>
+    <ListItem
+        title="Schema design"
+        subtitle="(incl. triggers, partial indices, views, etc)"
+        >I designed a system of table triggers, enums, and composite partial
+        indices to allow for the consolidation of historical audit data and
+        efficient current-data access, which allowed our team to confidently
+        start owning core data previously kept in the legacy mainframe.
+    </ListItem>
+    <ListItem
+        title="Query design"
+        subtitle="(incl. windowing functions, XML/JSON functions, CTEs, etc."
+    >
+        I continuously researched opportunities for improving and optimizing our
+        queries; for example, I redesigned a deduplication process to take only
+        7 minutes per table instead of 1 day per table (using <Code
+            >DELETE USING</Code
+        > instead of a large CTE). I also co-started a new pattern of using <Code
+            >DISTINCT ON</Code
+        > instead of <Code>RANK()</Code> and <Code>PARTITION</Code> in historical
+        point-in-time queries in order to achieve the same result more readably with
+        less room for error.
+    </ListItem>
+    <ListItem title="Database library design"
+        >Inspired by the Haskell library <a
+            href="https://github.com/3noch/postgresql-simple-interpolate"
+            >postgresql-simple-interpolate</a
+        >I created the Rust library <a
+            href="https://docs.rs/postgres-named-parameters/latest/postgres_named_parameters/"
+            >postgres_named_parameters</a
+        >, which provides procedural macros to safely interpolate numbered query
+        parameters (<Code>$1</Code>, <Code>$2</Code>, ...) using a more ergonomic named-parameter syntax.
+        I like this approach because it provides the full power of raw SQL but
+        without the usual pitfalls of manually numbered parameters.
+    </ListItem>
+</Panel>

@@ -1,0 +1,41 @@
+---
+import ListItem from "../components/ListItem.astro";
+import Panel from "../components/Panel.astro";
+---
+
+<Panel>
+    <h1>Infrastructure Setup Skills</h1>
+    <p>4+ years professional experience. Click each for more details.</p>
+    <ListItem
+        title="Kubernetes"
+        >I took the initiative to refactor our Kubernetes manifest setup to be
+        4x more DRY, using a small shell script to generate per-environment
+        (dev/cert/preprod/prod) versions of our 40+ deployments, jobs, and Nginx
+        ingresses/Istio httproutes. My script uses <a
+            href="https://github.com/mikefarah/yq">yq</a
+        > to easily propagate global, per-environment, and per-deployment environment
+        variables.</ListItem
+    >
+    <ListItem title="Google Cloud Platform/GCP"
+        >Created the CI/CD infrastructure (including deploy keys) to manage GCP
+        deployments and secrets. Experienced with production support (using K8S
+        CLI and <a href="https://github.com/sarub0b0/kubetui">TUIs</a>) to the
+        extent that I mentored newer engineers on how to more efficiently
+        monitor and modify deployments.</ListItem
+    >
+    <ListItem title="GitLab CI/CD">
+        Upgraded our CI/CD infrastructure to use GitLab for both image storage
+        and CI/CD (including creating the <a
+            href="https://chromewebstore.google.com/detail/deployment-environments-f/ihenkkccaaacabdgcendjljnoolncbbg?authuser=1&hl=en"
+            >Deployment Environments for GitLab</a
+        > browser extension to improve the UX), eliminating the need for semi-manual
+        deployments.
+    </ListItem>
+    <ListItem title="Docker and Docker Compose"
+        >Lead the simplification of our Docker setup, using newer Docker
+        multi-image Dockerfile features to drop the Dockerfile count in our main
+        repo from 3 to 1, greatly improving ease of comprehension and
+        maintenance. Took initiative to leverage YAML anchors to eliminate
+        environment variable duplication for our 33 Docker Compose services.
+    </ListItem>
+</Panel>

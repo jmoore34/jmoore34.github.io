@@ -1,0 +1,44 @@
+---
+import ListItem from "../components/ListItem.astro";
+import Panel from "../components/Panel.astro";
+---
+
+<Panel>
+    <h1>Development Skills</h1>
+    <p>API design (4+ years experience)</p>
+    <ListItem title="API design" subtitle="(4+ years experience)"
+        >After 3 years of maintaining and version-bumping existing APIs, an
+        opportunity arose in which I was able to co-design a set of brand new
+        APIs. Hence, I used my experience with the shortcomings of our existing
+        APIs to design something better, including improving REST compliance
+        (and thus ease of both database operations and pubsub emissions),
+        standardizing our units (eliminating the need for per-stakeholder
+        exceptions), and switching off of string-encoded integers (eliminating
+        problematic edge cases).
+    </ListItem>
+    <ListItem title="API implementation" subtitle="(4+ years experience)">
+        I've not only implemented and consumed APIs using a number of different
+        frameworks (Haskell/Servant, Kotlin/Ktor, TypeScript/Express), but I've
+        also dealt with WebSockets, JWTs, OpenAPI docs generation, and writing
+        custom middleware.
+    </ListItem>
+    <ListItem title="Cybersecurity Research">
+        <ul>
+            <li>
+                While working as a research assistant, I used the Binary
+                Analysis Platform's symbolic microexecutor to automatically
+                verify null reference vulnerabilities in C. Symbolic execution
+                was chosen because it's a middle ground between fuzzing (which
+                lacks in completeness) and static analysis (which lacks in
+                soundness).
+            </li>
+            <li>
+                From my undergraduate and graduate cybersecurity research I've
+                also gained experience in binary exploitation (using
+                cutter/Ghidra for decompilation and GDB for runtime analysis)
+                and network exploitation (e.g. patching XSS and SQL injection
+                vulnerabilities).
+            </li>
+        </ul>
+    </ListItem>
+</Panel>
