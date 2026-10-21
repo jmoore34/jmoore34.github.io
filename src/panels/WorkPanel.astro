@@ -1,40 +1,153 @@
 ---
 import ListItem from "../components/ListItem.astro";
 import Panel from "../components/Panel.astro";
+
+function s(n: number) {
+    if (n != 1) {
+        return "s";
+    } else {
+        return "";
+    }
+}
+
+function elapsed(year: number, month: number) {
+    const start = new Date(year, month - 1, 1); // months in js are weirdly 0-indexed
+    const end = new Date();
+    const monthDiff =
+        end.getMonth() -
+        start.getMonth() +
+        Math.min(1, 12 * (end.getFullYear() - start.getFullYear()));
+    // Context for min(1,...): add 1 month when total months < 12
+    // June 2025 - July 2026 is (7-6)+12 = 13 months (1yr 1mo)
+    // June 2025 - July 2025 is (7-6)+0  = 1 month, but standard to write as 2
+    // Oct 2024  - Feb 2026  is (2-10) + 24 = 16 months (1yr 4mo)
+    // Oct 2025  - Feb 2026  is (2-10) + 12 = 4 months, but standard to write as 5
+    const years = Math.floor(monthDiff / 12);
+    const yearString = years >= 1 ? `${years} year${s(years)}` : "";
+    const months = monthDiff % 12;
+    const monthString = months >= 1 ? `${months} month${s(months)}` : "";
+    const space = years > 0 && months > 0 ? " " : "";
+    return yearString + space + monthString;
+}
 ---
 
 <Panel>
     <h1>Workplace experience</h1>
-    <h2>Click on an item to expand</h2>
+    <h2>5 years in software</h2>
+    <h2>Click on an item to expand.</h2>
+    <p>H-E-B: Oct 2022 - Present (${elapsed(2022, 10)})</p>
     <ListItem
         title="Software Engineer II, H-E-B"
-        subtitle="(November 2023 - Present)"
+        subtitle={`Nov 2023 - Present (${elapsed(2023, 11)}`}
     >
         <p>H-E-B, San Antonio, TX (Remote)</p>
-        <p>
-            As a Haskell backend engineer, I rewrote one of our least performant
-            queries to cut its completion time from over a day to under 8
-            minutes (a 12,000x performance increase). I also modified our
+        <ul>
+            <li>
+                Awarded org-wide <b>Software Engineer II of the Year</b> for 2025,
+                org-wide <b>All Star</b> for 2024, and company-wide <b>Kodi
+                (Dependability) Award</b> for October 2023
+            </li>
+            <li>
+                Researched PostgreSQL internals in order to pull off a massive
+                (&gt;2 billion row) data migration without downtime and even
+                monitor the progress pre-commit by querying PostgreSQL MVCC
+                system columns.
+            </li>
+            <li>
+                Upon receiving an urgent feature request that we only had 2
+                sprints to ship, an engineer and the product manager had
+                conflicting design ideas. As the lead of that project, I was
+                able to distill both of their underlying requirements, allowing
+                me to design and ship a solution that satisfied both team
+                members.
+            </li>
+            <li>
+                Pioneered a plan to upgrade our asynchronous processors to use
+                multithreading instead of deployment replicas, reducing CPU
+                usage by 40% and shortening an expensive data migration from 9
+                days to 2 days.
+            </li>
+            <li>
+                Mentored a new engineer in both our tech stack and domain
+                knowledge, promptly responding to questions and guiding him how
+                to approach technical problems. This culminated in a project in
+                which I worked with him to design a new version of our API and
+                database schema.
+            </li>
+            <li>
+                Architected our deployment infrastructure: replaced a legacy
+                system with a new Dockerfile, Docker Compose, programmatically
+                generated Kubernetes manifests, Istio httproutes (from Ngnix
+                ingresses), GitLab CI/CD, and authored the Deployment
+                Environments for GitLab browser extension to make deployments to
+                GCP vastly easier, safer, and run 15 minutes faster.
+            </li>
+            <li>
+                Contributed to static-ls, an open-source Haskell language server
+                (LSP), adding new code autocomplete actions
+            </li>
+            <li>
+                Co-directed a Change Data Capture (CDC) pipeline from Oracle to
+                PostgreSQL using triggers, advisory locks, and views. This
+                enabled efficient current and point-in-time data access and
+                reduced discrepancies (10% to 0%).
+            </li>
+            <li>
+                Rewrote one of our least performant migration queries to cut its
+                completion time from over a day to under 8 minutes.
+            </li>
+            <!--<li>modified our
             message storage infrastructure to automatically clean up after
-            itself, safely deleting over 100 million stale records in its pilot,
-            to permanently boost the performance of historical queries.
-        </p></ListItem
-    >
+            itself, safely deleting over 100 million stale records in its pilot, boosting the performance of historical queries.</li>-->
+        </ul>
+    </ListItem>
     <ListItem
         title="Software Engineer I, H-E-B"
-        subtitle="(October 2022 - November 2023)"
+        subtitle="Oct 2022 - Nov 2023 (1 year 1 month)"
     >
         <p>H-E-B, San Antonio, TX (Remote)</p>
-        <p>
-            Pairing with a staff engineer, I created a major redesign to our
+        <ul>
+            <!--<li>Pairing with a staff engineer, I created a major redesign to our
             database schema that would reduce data anomalies and allow for
             efficient point-in-time historical queries of data that was
-            previously very expensive to query historically. I also improved the
-            clarity of all our SQL queries by integrating a quasiquoter into our
-            Haskell codebase. With an eye for detail, I caught sneaky yet
-            important bugs in code review. Twice, I caught sneaky edge cases
-            with our team's planned redesign, which I presented to the team with
-            data analysis and pros and cons of multiple solutions.
-        </p></ListItem
+            previously very expensive to query historically.</li> -->
+            <li>
+                Caught sneaky edge cases with our team's planned redesign, which
+                I presented to the team with data analysis and pros and cons of
+                multiple solutions.
+            </li>
+            <li>
+                Improved the clarity of all our SQL queries by refactoring them
+                to use a quasiquoter instead of raw strings.
+            </li>
+            <li>
+                Promoted to Software Engineer II after only a year (November
+                2023).
+            </li>
+        </ul>
+    </ListItem>
+    <ListItem
+        title="Research Assistant, UT Dallas"
+        subtitle="(Feb 2020 - Dec 2020)"
+        >Worked on a team of PhD students creating a framework to evaluate fuzz
+        testers via artificial bug injection. I read papers, designed and ran
+        experiments, developed parts of the toolchain (such as a small Clang
+        compiler plugin to rewrite source code and a custom Primus Lisp plugin
+        for the Binary Analysis Platform microexecutor).</ListItem
     >
+    <p>Non-software experience:</p>
+    <ListItem
+        title="Orientation Leader, UT Dallas"
+        subtitle="Feb-Aug 2018, Feb-Aug 2019 (1 year 2 months)"
+    >
+        <ul>
+            <li>
+                Lead small groups and provided academic advising, correctly
+                handling confidential student records
+            </li>
+            <li>
+                Awarded <b>Returning Orientation Leader of the Year</b> for 2019
+            </li>
+        </ul>
+    </ListItem>
 </Panel>
