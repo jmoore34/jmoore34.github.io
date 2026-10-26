@@ -16,7 +16,7 @@ function elapsed(year: number, month: number) {
     const monthDiff =
         end.getMonth() -
         start.getMonth() +
-        Math.min(1, 12 * (end.getFullYear() - start.getFullYear()));
+        Math.max(1, 12 * (end.getFullYear() - start.getFullYear()));
     // Context for min(1,...): add 1 month when total months < 12
     // June 2025 - July 2026 is (7-6)+12 = 13 months (1yr 1mo)
     // June 2025 - July 2025 is (7-6)+0  = 1 month, but standard to write as 2
@@ -34,8 +34,8 @@ function elapsed(year: number, month: number) {
 <Panel>
     <h1>Workplace experience</h1>
     <h2>5 years in software</h2>
-    <h2>Click on an item to expand.</h2>
-    <p>H-E-B: Oct 2022 - Present (${elapsed(2022, 10)})</p>
+    <p>Click on an item to expand.</p>
+    <p>H-E-B: Oct 2022 - Present ({elapsed(2022, 10)})</p>
     <ListItem
         title="Software Engineer II, H-E-B"
         subtitle={`Nov 2023 - Present (${elapsed(2023, 11)}`}
