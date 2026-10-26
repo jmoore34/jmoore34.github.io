@@ -65,9 +65,9 @@ import DevelopmentPanel from "../panels/DevelopmentPanel.astro";
 	document.addEventListener("touchend", (e) => {
 		const delta = e.changedTouches[0].screenX - touchStartX;
 		if (delta > touchThreshold) {
-			incrementSlide(1);
-		} else if (delta < -1 * touchThreshold) {
 			incrementSlide(-1);
+		} else if (delta < -1 * touchThreshold) {
+			incrementSlide(1);
 		}
 	});
 </script>
