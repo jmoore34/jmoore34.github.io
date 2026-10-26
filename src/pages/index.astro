@@ -14,17 +14,19 @@ import DevelopmentPanel from "../panels/DevelopmentPanel.astro";
 ---
 
 <Layout>
-	<div class="scene">
-		<div class="helix">
-			<div class="floor">footer</div>
-			<StartPanel />
-			<AboutMePanel />
-			<WorkPanel />
-			<EducationPanel />
-			<ProjectsPanel />
-			<InfrastructurePanel />
-			<DatabasePanel />
-			<DevelopmentPanel />
+	<div class="root">
+		<div class="scene">
+			<div class="helix">
+				<div class="floor">footer</div>
+				<StartPanel />
+				<AboutMePanel />
+				<WorkPanel />
+				<EducationPanel />
+				<ProjectsPanel />
+				<InfrastructurePanel />
+				<DatabasePanel />
+				<DevelopmentPanel />
+			</div>
 		</div>
 	</div>
 </Layout>
@@ -89,7 +91,7 @@ import DevelopmentPanel from "../panels/DevelopmentPanel.astro";
 		--current-index: 0;
 	}
 
-	body {
+	.root {
 		display: flex;
 		justify-content: center;
 		align-items: center;
