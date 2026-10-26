@@ -35,7 +35,7 @@ function elapsed(year: number, month: number) {
     <h1>Workplace experience</h1>
     <h2>5 years in software</h2>
     <p>Click on an item to expand.</p>
-    <p>H-E-B: Oct 2022 - Present ({elapsed(2022, 10)})</p>
+    <p class="nobottom">H-E-B: Oct 2022 - Present ({elapsed(2022, 10)})</p>
     <ListItem
         title="Software Engineer II, H-E-B"
         subtitle={`Nov 2023 - Present (${elapsed(2023, 11)}`}
@@ -126,16 +126,20 @@ function elapsed(year: number, month: number) {
             </li>
         </ul>
     </ListItem>
+    <br>
+    <ListItem title="Software Development Intern, Tyler Technologies" subtitle="May 2021 - Aug 2021 (4 months)" >
+        Used C#, WPF, MVVM architecture, and Material Design components to rewrite a legacy Silverlight application.
+    </ListItem>
     <ListItem
         title="Research Assistant, UT Dallas"
-        subtitle="(Feb 2020 - Dec 2020)"
+        subtitle="Feb 2020 - Dec 2020 (11 months)"
         >Worked on a team of PhD students creating a framework to evaluate fuzz
         testers via artificial bug injection. I read papers, designed and ran
         experiments, developed parts of the toolchain (such as a small Clang
         compiler plugin to rewrite source code and a custom Primus Lisp plugin
         for the Binary Analysis Platform microexecutor).</ListItem
     >
-    <p>Non-software experience:</p>
+    <p class="nobottom">Non-software experience:</p>
     <ListItem
         title="Orientation Leader, UT Dallas"
         subtitle="Feb-Aug 2018, Feb-Aug 2019 (1 year 2 months)"
@@ -151,3 +155,7 @@ function elapsed(year: number, month: number) {
         </ul>
     </ListItem>
 </Panel>
+
+<style is:global>
+    .nobottom {margin-bottom: 0;}
+</style>
