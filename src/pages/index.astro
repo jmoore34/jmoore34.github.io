@@ -79,8 +79,8 @@ import DevelopmentPanel from "../panels/DevelopmentPanel.astro";
 		--grid-size: 2500px;
 		--grid-square-size: 100px;
 		--grid-large-square-size: calc(var(--grid-square-size) * 5);
-		--panel-height: 60vh;
-		--panel-width: 60vw;
+		--panel-height: 70vh;
+		--panel-width: 70vw;
 		--panels-per-circle: 8.3;
 		--panels-per-rainbow: 8.7;
 		--panel-angular-width: calc(2 * pi / var(--panels-per-circle));
@@ -89,6 +89,10 @@ import DevelopmentPanel from "../panels/DevelopmentPanel.astro";
 		);
 		--per-panel-vertical-offset: 25vh;
 		--current-index: 0;
+	}
+
+	body {
+		margin: 0;
 	}
 
 	.root {
