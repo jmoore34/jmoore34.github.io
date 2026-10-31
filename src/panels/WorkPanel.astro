@@ -42,10 +42,14 @@ function elapsed(year: number, month: number) {
     >
         <ul>
             <li>
-                Awarded org-wide <b>Software Engineer II of the Year</b> for 2025,
-                org-wide <b>All Star</b> for 2024, and company-wide <b
-                    >Kodi (Dependability) Award</b
-                > for October 2023
+                Awarded Software Engineer II of the Year for 2025 for leading a
+                project to cut $5M/year in supply chain costs by designing a
+                tariff intake system on a tight two-sprint deadline and
+                resolving conflicts between different stakeholders.
+            </li>
+            <li>
+                Co-lead a project to cut PostgreSQL CPU usage by 40% and GCP
+                costs by $900/month via structured concurrency.
             </li>
             <li>
                 Researched PostgreSQL internals in order to pull off a massive
@@ -54,37 +58,22 @@ function elapsed(year: number, month: number) {
                 system columns.
             </li>
             <li>
-                Upon receiving an urgent feature request that we only had 2
-                sprints to ship, an engineer and the product manager had
-                conflicting design ideas. As the lead of that project, I was
-                able to distill both of their underlying requirements, allowing
-                me to design and ship a solution that satisfied both team
-                members.
-            </li>
-            <li>
-                Pioneered a plan to upgrade our asynchronous processors to use
-                multithreading instead of deployment replicas, reducing CPU
-                usage by 40% and shortening an expensive data migration from 9
-                days to 2 days.
-            </li>
-            <li>
                 Mentored a new engineer in both our tech stack and domain
-                knowledge, promptly responding to questions and guiding him how
-                to approach technical problems. This culminated in a project in
-                which I worked with him to design a new version of our API and
-                database schema.
+                knowledge, culminating in us collaborating on a REST API to
+                collect data from 2,400+ suppliers.
             </li>
             <li>
-                Architected our deployment infrastructure: replaced a legacy
-                system with a new Dockerfile, Docker Compose, programmatically
-                generated Kubernetes manifests, Istio httproutes (from Ngnix
-                ingresses), GitLab CI/CD, and authored the Deployment
-                Environments for GitLab browser extension to make deployments to
-                GCP vastly easier, safer, and run 15 minutes faster.
+                Cut deploy time to GCP by 15 minutes and cut Kubernetes manifest
+                file count by 75% by rearchitecting our K8S and Docker Compose
+                setup and authoring the <a
+                    href="https://github.com/jmoore34/gitlab-deployment-environments"
+                    >Deployment Environments for GitLab</a
+                > browser extension.
             </li>
             <li>
-                Contributed to static-ls, an open-source Haskell language server
-                (LSP), adding new code autocomplete actions
+                Contributed to <a
+                    href="https://github.com/josephsumabat/static-ls">static-ls</a>, an open-source Haskell language server
+                (LSP), adding new code autocomplete actions to bring Haskell tooling more up to par with that of other languages.
             </li>
             <li>
                 Co-directed a Change Data Capture (CDC) pipeline from Oracle to
@@ -102,62 +91,77 @@ function elapsed(year: number, month: number) {
         </ul>
     </ListItem>
     <ListItem
-        title="Software Engineer I"
-        subtitle="Oct 2022 - Nov 2023 (1 year 1 month)"
-    >
-        <ul>
-            <!--<li>Pairing with a staff engineer, I created a major redesign to our
+        title="
+                    Software
+                    Engineer
+                    I"
+                    subtitle="Oct 2022 - Nov 2023 (1 year 1 month)"
+                >
+                    <ul>
+                        <!--<li>Pairing with a staff engineer, I created a major redesign to our
             database schema that would reduce data anomalies and allow for
             efficient point-in-time historical queries of data that was
             previously very expensive to query historically.</li> -->
-            <li>
-                Caught sneaky edge cases with our team's planned redesign, which
-                I presented to the team with data analysis and pros and cons of
-                multiple solutions.
+                        <li>
+                            Caught sneaky edge cases with our team's planned
+                            redesign, which I presented to the team with data
+                            analysis and pros and cons of multiple solutions.
+                        </li>
+                        <li>
+                            Improved the clarity of all our SQL queries by
+                            refactoring them to use a quasiquoter instead of raw
+                            strings.
+                        </li>
+                        <li>
+                            Promoted to Software Engineer II after only a year
+                            (November 2023).
+                        </li>
+                    </ul>
+                </a>
+                <br />
+                <p class="nobottom">
+                    Tyler Technologies: May 2021 - Aug 2021 (4 months)
+                </p>
+                <ListItem title="Software Development Intern">
+                    Used C#, WPF, MVVM architecture, and Material Design
+                    components to rewrite a legacy Silverlight application.
+                </ListItem>
+                <p class="nobottom">
+                    UT Dallas: Feb 2020 - Dec 2020 (11 months)
+                </p>
+                <ListItem title="Research Assistant"
+                    >Worked on a team of PhD students creating a framework to
+                    evaluate fuzz testers via artificial bug injection. I read
+                    papers, designed and ran experiments, developed parts of the
+                    toolchain (such as a small Clang compiler plugin to rewrite
+                    source code and a custom Primus Lisp plugin for the Binary
+                    Analysis Platform microexecutor).</ListItem
+                >
+                <p>Non-software experience:</p>
+                <p class="nobottom">
+                    UT Dallas: Feb 2018 - Aug 2018 &amp; Feb 2019 - Aug 2019 (1
+                    year 2 months)
+                </p>
+                <ListItem title="Orientation Leader">
+                    <ul>
+                        <li>
+                            Lead small groups and provided academic advising,
+                            correctly handling confidential student records
+                        </li>
+                        <li>
+                            Awarded <b
+                                >Returning Orientation Leader of the Year</b
+                            > for 2019
+                        </li>
+                    </ul>
+                </ListItem>
             </li>
-            <li>
-                Improved the clarity of all our SQL queries by refactoring them
-                to use a quasiquoter instead of raw strings.
-            </li>
-            <li>
-                Promoted to Software Engineer II after only a year (November
-                2023).
-            </li>
-        </ul>
-    </ListItem>
-    <br />
-    <p class="nobottom">Tyler Technologies: May 2021 - Aug 2021 (4 months)</p>
-    <ListItem title="Software Development Intern">
-        Used C#, WPF, MVVM architecture, and Material Design components to
-        rewrite a legacy Silverlight application.
-    </ListItem>
-    <p class="nobottom">UT Dallas: Feb 2020 - Dec 2020 (11 months)</p>
-    <ListItem title="Research Assistant"
-        >Worked on a team of PhD students creating a framework to evaluate fuzz
-        testers via artificial bug injection. I read papers, designed and ran
-        experiments, developed parts of the toolchain (such as a small Clang
-        compiler plugin to rewrite source code and a custom Primus Lisp plugin
-        for the Binary Analysis Platform microexecutor).</ListItem
-    >
-    <p>Non-software experience:</p>
-    <p class="nobottom">UT Dallas: Feb 2018 - Aug 2018 &amp; Feb 2019 - Aug 2019 (1 year 2 months)</p>
-    <ListItem
-        title="Orientation Leader"
-    >
-        <ul>
-            <li>
-                Lead small groups and provided academic advising, correctly
-                handling confidential student records
-            </li>
-            <li>
-                Awarded <b>Returning Orientation Leader of the Year</b> for 2019
-            </li>
-        </ul>
-    </ListItem>
-</Panel>
 
-<style is:global>
-    .nobottom {
-        margin-bottom: 0;
-    }
-</style>
+            <style is:global>
+                .nobottom {
+                    margin-bottom: 0;
+                }
+            </style>
+        </ul></ListItem
+    ></Panel
+>
